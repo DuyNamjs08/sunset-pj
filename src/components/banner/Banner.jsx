@@ -22,14 +22,14 @@ const BannerDiDong = (props) => {
     prevArrow: (
       <div className="owl-nav">
         <button type="button" className="owl-prev" aria-label="prev">
-          <FaAngleLeft className="text-[30px]" />
+          <FaAngleLeft className="text-[40px]" />
         </button>
       </div>
     ),
     nextArrow: (
       <div className="owl-nav">
         <button type="button" className="owl-next" aria-label="next">
-          <FaAngleRight className="text-[30px]" />
+          <FaAngleRight className="text-[40px]" />
         </button>
       </div>
     ),

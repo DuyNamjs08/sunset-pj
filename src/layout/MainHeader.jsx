@@ -1,29 +1,45 @@
-import { FaAngleDown, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+/* eslint-disable react/prop-types */
+import {
+  FaAngleDown,
+  FaBars,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+} from "react-icons/fa";
 import { headerLinks } from "../constant/header";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { FaCartShopping } from "react-icons/fa6";
 
-const MainHeader = () => {
+const MainHeader = ({ onclick }) => {
   return (
     <section className="header">
       <div className="container mx-[auto]">
-        <div className="flex items-center justify-between">
-          <div className="">
+        <div className="flex items-center justify-center md:justify-between">
+          <div className="flex justify-between items-center w-full px-4 md:px-0">
+            <div
+              onClick={onclick}
+              className="block md:hidden text-[20px] cursor-pointer"
+            >
+              <FaBars />
+            </div>
             <div className="logo">
               <a
                 href="https://sunemit.com"
                 title="Điện năng lượng mặt trời, điện mặt trời, sunemit"
               >
                 <img
-                  className="w-[230px]"
+                  className=" w-[100px] mb-4 md:mb-0 md:w-[230px]"
                   src="https://sunemit.com/wp-content/uploads/2020/09/logo-sunemit.png"
                   alt="logo"
                   title="logo"
                 />
               </a>
             </div>
+            <div className="block md:hidden text-[20px] cursor-pointer">
+              <FaCartShopping />
+            </div>
           </div>
-          <div className="">
+          <div className="hidden md:block ">
             <div className="flex gap-4">
               <div className="address">
                 <span className="flex items-center gap-2">
@@ -48,7 +64,7 @@ const MainHeader = () => {
             </div>
           </div>
         </div>
-        <Nav>
+        <Nav className="hidden md:block">
           <MenuList>
             {headerLinks.map((link, index) => (
               <MenuItem key={index}>

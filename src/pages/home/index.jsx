@@ -1,5 +1,14 @@
 import styled from "styled-components";
 import Banner from "../../components/banner/Banner";
+import ListItem1 from "../../components/danh-sach-san-pham/ListItem1";
+import IntroSession1 from "../../components/gioi-thieu/IntroSession1";
+import Button1 from "../../components/button/Button1";
+import Achivement from "../../components/thanh-tuu";
+import ListPj1 from "../../components/danh-sach-pj/ListPj1";
+import Slide1 from "../../components/slide/Slide1";
+import PartnerSlider from "../../components/slide/Slide2";
+import SessionHilight from "../../components/hightLight/SessionHilight";
+import Advance from "../../components/loi-khuyen/Advance";
 
 const Home = () => {
   return (
@@ -12,15 +21,18 @@ const Home = () => {
               SUNEMIT cung cấp Giải pháp Điện mặt trời hoàn hảo cho mọi công
               trình
             </h2>
-            <a
-              className="btn-custom border-white"
-              href="https://sunemit.com/lien-he/"
-            >
-              Liên hệ ngay
-            </a>
+            <Button1 label={"Liên hệ ngay"} />
           </div>
         </div>
       </StyleBanner>
+      <ListItem1 />
+      <IntroSession1 />
+      <Achivement />
+      <ListPj1 />
+      <Slide1 />
+      <PartnerSlider />
+      <SessionHilight />
+      <Advance />
     </div>
   );
 };
@@ -33,25 +45,6 @@ const StyleBanner = styled.div`
     font-size: 36px;
     color: #fff;
     font-weight: 700;
-  }
-  a {
-    width: max-content;
-    height: 60px;
-    min-width: 210px;
-    font-size: 16px;
-    color: #fff;
-    display: inline-block;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    line-height: 60px;
-    text-align: center;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 3px;
-    border: 1px solid #fff;
-    &:hover {
-      background: #093;
-    }
   }
 `;
 
