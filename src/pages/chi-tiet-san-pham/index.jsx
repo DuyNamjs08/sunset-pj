@@ -35,8 +35,8 @@ const DetailProduct = () => {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
   };
   return (
@@ -140,7 +140,7 @@ const DetailProduct = () => {
                     +
                   </div>
                 </div>
-                <div className="border border-[#093] min-w-[180px] font-semibold rounded leading-[50px] text-center  ">
+                <div className="border cursor-pointer border-[#093] min-w-[180px] font-semibold rounded leading-[50px] text-center  ">
                   Thêm vào giỏ hàng
                 </div>
               </div>
