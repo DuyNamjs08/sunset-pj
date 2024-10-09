@@ -23,3 +23,26 @@ body {
   background: #f1f1f1;
   border-radius: 10px;
 }
+.container {
+  max-width: 1200px !important;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: 0 auto;
+}
+.ant-pagination .ant-pagination-item-active a {
+  background-color: #009933 !important;
+  color: #fff;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.ant-pagination .ant-pagination-item-active {
+  border: 1px solid #009933 !important;
+}
+select:focus {
+  border-color: #3333;
+  box-shadow: none;
+}

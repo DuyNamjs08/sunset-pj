@@ -12,7 +12,7 @@ const LIEN_HE = "/lien-he/";
 const DAT_LICH_KHAO_SAT = "/dat-lich-khao-sat/";
 const DANG_NHAP = "/dang-nhap";
 const DANG_KI = "/dang-ki";
-
+import Category from "./../pages/category";
 export const RouterWeb = [
   {
     id: 1,
@@ -27,8 +27,14 @@ export const RouterWeb = [
     component: <Pages.GioiThieu />,
   },
   {
-    id: 3,
+    id: 2,
     path: SAN_PHAM,
+    role: ["1", "2", "3"],
+    component: <Pages.Products />,
+  },
+  {
+    id: 3,
+    path: "/",
     role: ["1", "2", "3"],
     component: (
       <div>
@@ -38,23 +44,23 @@ export const RouterWeb = [
     child: [
       {
         path: "tam-pin-mat-troi/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Category type="1" />,
       },
       {
         path: "inverter-hoa-luoi-dien-mat-troi/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Category type="1" />,
       },
       {
         path: "he-thong-dien-mat-troi/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Category type="1" />,
       },
       {
         path: "vat-tu-phu-kien-dien-mat-troi/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Category type="1" />,
       },
       {
         path: "bo-luu-tru-dien-nang-luong-mat-troi/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Category type="1" />,
       },
     ],
   },

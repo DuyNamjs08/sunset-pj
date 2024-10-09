@@ -23,8 +23,8 @@ const MainHeader = ({ onclick }) => {
               <FaBars />
             </div>
             <div className="logo">
-              <a
-                href="https://sunemit.com"
+              <Link
+                href="/"
                 title="Điện năng lượng mặt trời, điện mặt trời, sunemit"
               >
                 <img
@@ -33,13 +33,13 @@ const MainHeader = ({ onclick }) => {
                   alt="logo"
                   title="logo"
                 />
-              </a>
+              </Link>
             </div>
             <div className="block md:hidden text-[20px] cursor-pointer">
               <FaCartShopping />
             </div>
           </div>
-          <div className="hidden md:block ">
+          <div className="hidden md:block w-[40%] ">
             <div className="flex gap-4">
               <div className="address">
                 <span className="flex items-center gap-2">
@@ -93,14 +93,18 @@ const Nav = styled.nav``;
 const MenuList = styled.ul`
   list-style: none;
   display: flex;
+  gap: 30px;
   margin: 0;
   padding: 0;
 `;
 
 const MenuItem = styled.li`
   position: relative;
-  margin-right: 20px;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+
   &:hover {
     color: #093;
   }
