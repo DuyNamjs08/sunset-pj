@@ -40,7 +40,33 @@ const SliderProduct = (props) => {
   const handleBeforeChange = (oldIndex, newIndex) => {
     setActiveIndex(newIndex); // Cập nhật index của slide active
   };
+  console.log(window.innerWidth);
+  const setting2 = {
+    slidesToShow: 4,
+    swipeToSlide: true,
+    focusOnSelect: true,
 
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  };
   return (
     <>
       <Slider
@@ -57,9 +83,7 @@ const SliderProduct = (props) => {
         <Slider
           asNavFor={nav1}
           ref={(slider) => (sliderRef2 = slider)}
-          slidesToShow={4}
-          swipeToSlide={true}
-          focusOnSelect={true}
+          {...setting2}
         >
           {data.map((item, index) => (
             <div key={index + 20} className="h-full">
@@ -69,7 +93,7 @@ const SliderProduct = (props) => {
                 }`}
               >
                 <img
-                  className=" max-h-[80px] md:max-h-[100px]  w-full "
+                  className="  min-h-[80px] max-h-[80px] md:max-h-[100px]  w-full "
                   src={item.image}
                   alt=""
                 />

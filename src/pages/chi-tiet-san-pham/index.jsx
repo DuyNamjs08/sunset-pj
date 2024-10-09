@@ -35,9 +35,29 @@ const DetailProduct = () => {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <div>

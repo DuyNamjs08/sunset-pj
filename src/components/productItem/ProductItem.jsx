@@ -13,7 +13,7 @@ const ProductItem = (ProductItem) => {
               title="Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G"
             >
               <img
-                className="w-100 d-block"
+                className=" w-full sm:w-100 d-block"
                 src="https://sunemit.com/wp-content/uploads/2024/06/inverter-hoa-luoi-1-pha-deye-sun-3.6-6k-g4-270x250.jpg"
                 alt="Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G"
               />
