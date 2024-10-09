@@ -4,6 +4,11 @@ import Login from "./login";
 import Register from "./register";
 import Products from "./sanpham";
 import NotFoundPage from "./notFoundPage/NotFoundPage.jsx";
+import DuAn from "./du-an/index.jsx";
+import CauHoiThgGap from "./cau-hoi-thuong-gap/index.jsx";
+import ContactPage from "./contact/ContactPage.jsx";
+import LichKhaoSat from "./lich-khao-sat/LichKhaoSat.jsx";
+import GioiThieu from "./gioi-thieu/GioiThieu.jsx";
 
 export default {
   Service,
@@ -12,4 +17,9 @@ export default {
   Register,
   Products,
   NotFoundPage,
+  DuAn,
+  CauHoiThgGap,
+  ContactPage,
+  LichKhaoSat,
+  GioiThieu,
 };

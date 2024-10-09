@@ -24,7 +24,7 @@ export const RouterWeb = [
     id: 2,
     path: GIOI_THIEU,
     role: ["1", "2", "3"],
-    component: <></>,
+    component: <Pages.GioiThieu />,
   },
   {
     id: 3,
@@ -86,13 +86,13 @@ export const RouterWeb = [
     id: 5,
     path: DU_AN,
     role: ["1", "2", "3"],
-    component: <></>,
+    component: <Pages.DuAn />,
   },
   {
     id: 6,
     path: CAU_HOI_THUONG_GAP,
     role: ["1", "2", "3"],
-    component: <></>,
+    component: <Pages.CauHoiThgGap />,
   },
   {
     id: 7,
@@ -122,13 +122,13 @@ export const RouterWeb = [
     id: 8,
     path: LIEN_HE,
     role: ["1", "2", "3"],
-    component: <></>,
+    component: <Pages.ContactPage />,
   },
   {
     id: 9,
     path: DAT_LICH_KHAO_SAT,
     role: ["1", "2", "3"],
-    component: <></>,
+    component: <Pages.LichKhaoSat />,
   },
   {
     id: 10,
