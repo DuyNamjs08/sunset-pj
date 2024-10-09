@@ -3,9 +3,9 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Pages from "./pages";
 import Layout from "./layout/Layout";
 import { RouterWeb } from "./router";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function App() {
-  // eslint-disable-next-line react/prop-types
   const AuthAccount = ({ children }) => {
     // const location = useLocation();
     // const token = localStorage.getItem("accessToken");

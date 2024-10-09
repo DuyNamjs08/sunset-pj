@@ -1,8 +1,9 @@
 import { Pagination } from "antd";
 
 import { useState } from "react";
-import ProductItem from "../../components/productItem/productItem";
+
 import LayoutProduct from "../../layout/layoutProduct/LayoutProduct";
+import ProductItem from "../../components/productItem/ProductItem";
 import "./style.css";
 
 const breadcrumbItems = [
@@ -54,10 +55,10 @@ const ListProduct = (ListProduct) => {
           Inverter năng lượng mặt trời
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6">
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          <ProductItem key={1} />
+          <ProductItem key={2} />
+          <ProductItem key={3} />
+          <ProductItem key={4} />
         </div>
         <div className="mb-[30px] bg-[#fafafa] pl-[38px] pr-[19px] my-2 flex justify-center  items-center h-[50px]">
           <Pagination

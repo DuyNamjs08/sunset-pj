@@ -1,4 +1,5 @@
 import Pages from "../pages";
+import Category from "./../pages/category";
 import { Outlet } from "react-router-dom";
 const TRANG_CHU = "/";
 const GIOI_THIEU = "/cong-ty-dien-mat-troi-uy-tin/";
@@ -12,7 +13,7 @@ const LIEN_HE = "/lien-he/";
 const DAT_LICH_KHAO_SAT = "/dat-lich-khao-sat/";
 const DANG_NHAP = "/dang-nhap";
 const DANG_KI = "/dang-ki";
-import Category from "./../pages/category";
+
 export const RouterWeb = [
   {
     id: 1,
@@ -27,10 +28,16 @@ export const RouterWeb = [
     component: <Pages.GioiThieu />,
   },
   {
-    id: 2,
+    id: 10,
     path: SAN_PHAM,
     role: ["1", "2", "3"],
     component: <Pages.Products />,
+  },
+  {
+    id: 11,
+    path: `${SAN_PHAM}/:id/`,
+    role: ["1", "2", "3"],
+    component: <Pages.DetailProduct />,
   },
   {
     id: 3,

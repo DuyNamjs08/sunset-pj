@@ -9,7 +9,7 @@ import CauHoiThgGap from "./cau-hoi-thuong-gap/index.jsx";
 import ContactPage from "./contact/ContactPage.jsx";
 import LichKhaoSat from "./lich-khao-sat/LichKhaoSat.jsx";
 import GioiThieu from "./gioi-thieu/GioiThieu.jsx";
-
+import DetailProduct from "../pages/chi-tiet-san-pham";
 export default {
   Service,
   Home,
@@ -22,4 +22,5 @@ export default {
   ContactPage,
   LichKhaoSat,
   GioiThieu,
+  DetailProduct,
 };

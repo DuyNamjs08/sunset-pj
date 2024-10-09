@@ -1,0 +1,20 @@
+.desc-detail-product ul li {
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.desc-detail-product ul {
+  list-style: disc;
+  padding-left: 18px;
+  padding-bottom: 5px;
+}
+.desc-detail-product p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777b93;
+  margin-bottom: 0;
+}
+.slick-dots li button:before {
+  font-size: 10px;
+}

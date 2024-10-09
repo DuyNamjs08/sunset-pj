@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom/dist";
 import "./style.css";
-
-const ProductItem = (ProductItem) => {
-  const urlDispatch = `/san-pham/inverter-hoa-luoi-1-pha-deye-sun-3-6-6k-g/`;
+const CategoryItem = (CategoryItem) => {
   return (
-    <div className="item-products">
+    <div className="item-category">
       <div className="">
         <div className="">
           <div className="images">
             <Link
-              to={urlDispatch}
+              to={"/tam-pin-mat-troi/"}
               title="Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G"
             >
               <img
@@ -24,42 +22,18 @@ const ProductItem = (ProductItem) => {
           <div className="text">
             <h3>
               <Link
-                to={urlDispatch}
+                to={"/tam-pin-mat-troi/"}
                 title="Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G"
               >
                 Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G
               </Link>
             </h3>
             <span className="price">
-              {/* <span className="amount">Liên hệ</span> */}
-              <span className="flex gap-2">
-                <del aria-hidden="true">
-                  <span className="woocommerce-Price-amount amount">
-                    <bdi>
-                      3.630.000
-                      <span className="woocommerce-Price-currencySymbol">
-                        ₫
-                      </span>
-                    </bdi>
-                  </span>
-                </del>
-
-                <ins aria-hidden="true">
-                  <span className="woocommerce-Price-amount amount">
-                    <bdi>
-                      3.120.000
-                      <span className="woocommerce-Price-currencySymbol">
-                        ₫
-                      </span>
-                    </bdi>
-                  </span>
-                </ins>
-              </span>
+              <span className="amount">Liên hệ</span>
             </span>
-
             <Link
-              className="btn-products"
-              to={urlDispatch}
+              className="btn-category"
+              to={"/tam-pin-mat-troi/"}
               title="Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G"
             >
               <i className="fa fa-shopping-cart" aria-hidden="true" /> Xem chi
@@ -72,4 +46,4 @@ const ProductItem = (ProductItem) => {
   );
 };
 
-export default ProductItem;
+export default CategoryItem;
