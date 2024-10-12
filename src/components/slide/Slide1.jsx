@@ -10,7 +10,7 @@ const Slide1 = () => {
       name: "Ông Phan Văn Hạnh - Chủ biệt thự tại Vinhomes, Hà Nội",
     },
     {
-      text: "Nhà tôi có Chung cư mini cho thuê, nên việc đầu tư Điện Mặt Trời đã được tôi cân nhắc tính toán từ rất lâu rồi. Nay lựa chọn SUNEMIT để triển khai với bộ sản phẩm đồng bộ thì rất yên tâm, khi có bất cứ vấn đề gì gọi SUNEMIT hỗ trợ, khỏi lo nghĩ nhà cung cấp này nhà sản xuất nọ, tất cả quy về một mối vẫn hơn.",
+      text: "Nhà tôi có Chung cư mini cho thuê, nên việc đầu tư Điện Mặt Trời đã được tôi cân nhắc tính toán từ rất lâu rồi. Nay lựa chọn Hải Đăng Solar Energy để triển khai với bộ sản phẩm đồng bộ thì rất yên tâm, khi có bất cứ vấn đề gì gọi Hải Đăng Solar Energy hỗ trợ, khỏi lo nghĩ nhà cung cấp này nhà sản xuất nọ, tất cả quy về một mối vẫn hơn.",
       name: "Ông Nguyễn Đức Vượng - Phạm Ngọc Thạch, Ba Đình, Hà Nội",
     },
     {

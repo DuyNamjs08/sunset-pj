@@ -76,7 +76,9 @@ const PartnerSlider = () => {
         <div className="container">
           <div className="title">
             <span className="title__slogan"></span>
-            <h2 className="title__heading">Đối tác của SUNEMIT</h2>
+            <h2 className="title__heading">
+              Đối tác của Hải Đăng Solar Energy
+            </h2>
           </div>
           <Slider {...settings}>
             {partners.map((partner, index) => (

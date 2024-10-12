@@ -2,6 +2,8 @@ import styled from "styled-components";
 import gradientImage from "../../assets/single_img.jpg";
 import gradientImage1 from "../../assets/gradient-1.png";
 import { Form, Input, Select } from "antd";
+import logo from "../../assets/hải đăng.png";
+
 const { Option } = Select;
 
 const Advance = () => {
@@ -14,14 +16,14 @@ const Advance = () => {
               <div className="col-xl-9 p-0">
                 <div className="title">
                   <span className="title__slogan">
-                    SUNEMIT sẵn sàng lắng nghe
+                    Hải Đăng Solar Energy sẵn sàng lắng nghe
                   </span>
                   <h2 className="title__heading">Tư vấn kỹ thuật</h2>
                   <p className="title__des">
-                    SUNEMIT sẽ cung cấp cho Quý Khách giải pháp thiết kế và lắp
-                    đặt Điện năng lượng mặt trời trọn gói phù hợp nhất với đặc
-                    thù công trình của mình. Chỉ cần để lại thông tin liên hệ
-                    của bạn cho các chuyên viên của chúng tôi
+                    Hải Đăng Solar Energy sẽ cung cấp cho Quý Khách giải pháp
+                    thiết kế và lắp đặt Điện năng lượng mặt trời trọn gói phù
+                    hợp nhất với đặc thù công trình của mình. Chỉ cần để lại
+                    thông tin liên hệ của bạn cho các chuyên viên của chúng tôi
                   </p>
                 </div>
                 <div className="wpcf7 js" id="wpcf7-f6-o1" lang="vi" dir="ltr">
@@ -134,11 +136,12 @@ const Advance = () => {
                 </p>
                 <h2>Hotline 24/7</h2>
                 <a
-                  href="https://sunemit.com"
-                  title="Điện năng lượng mặt trời, điện mặt trời, sunemit"
+                  href="https://Hải Đăng Solar Energy.com"
+                  title="Điện năng lượng mặt trời, điện mặt trời, Hải Đăng Solar Energy"
                 >
                   <img
-                    src="https://sunemit.com/wp-content/uploads/2020/09/logo-sunemit.png"
+                    className="rounded-lg"
+                    src={logo}
                     title="logo"
                     alt="logo"
                   />

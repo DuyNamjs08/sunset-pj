@@ -2,6 +2,7 @@ import styled from "styled-components";
 import bg from "../../assets/bg_01.png";
 import Button1 from "../button/Button1";
 import { FaPlay } from "react-icons/fa";
+import img from "../../assets/gioi-thieu01.png";
 const IntroSession1 = () => {
   return (
     <IntroSession1Style bg={bg}>
@@ -12,7 +13,8 @@ const IntroSession1 = () => {
               <div className="site-about__content">
                 <div className="title">
                   <span className="title__slogan wow fadeInDown">
-                    CHÚNG TÔI LÀ SUNEMIT - ĐIỆN NĂNG LƯỢNG MẶT TRỜI
+                    CHÚNG TÔI LÀ Hải Đăng Solar Energy - ĐIỆN NĂNG LƯỢNG MẶT
+                    TRỜI
                   </span>
                   <h2
                     className="title__heading wow fadeInDown"
@@ -23,14 +25,16 @@ const IntroSession1 = () => {
                 </div>
                 <div className="des">
                   <p style={{ textAlign: "justify" }}>
-                    SUNEMIT cung cấp Giải pháp Điện Năng lượng Mặt Trời có kinh
-                    nghiệm và Uy tín lâu năm nhất kể từ 2012, đảm bảo cung cấp
-                    cho Khách hàng trọn bộ giải pháp và sản phẩm điện mặt trời
-                    chất lượng cao nhất (Tấm pin SU-Series, Panasonic, LG,
-                    SMA,…), đội ngũ kỹ thuật chuyên nghiệp của chúng tôi luôn
-                    làm khách hàng hài lòng bởi kết quả sản phẩm cuối cùng khi
-                    bàn giao đi kèm với chế độ bảo hành sau bán hàng tốt nhất
-                    hiện nay.
+                    <span className="text-[#fa9538]">
+                      Hải Đăng Solar Energy
+                    </span>{" "}
+                    cung cấp Giải pháp Điện Năng lượng Mặt Trời có kinh nghiệm
+                    và Uy tín lâu năm nhất kể từ 2012, đảm bảo cung cấp cho
+                    Khách hàng trọn bộ giải pháp và sản phẩm điện mặt trời chất
+                    lượng cao nhất (Tấm pin SU-Series, Panasonic, LG, SMA,…),
+                    đội ngũ kỹ thuật chuyên nghiệp của chúng tôi luôn làm khách
+                    hàng hài lòng bởi kết quả sản phẩm cuối cùng khi bàn giao đi
+                    kèm với chế độ bảo hành sau bán hàng tốt nhất hiện nay.
                   </p>
                   <p style={{ textAlign: "justify" }}>
                     <strong>
@@ -40,10 +44,13 @@ const IntroSession1 = () => {
                   </p>
                   <p style={{ textAlign: "justify" }}>
                     Đội ngũ nhân sự và kỹ sư thông minh, giàu kinh nghiệm của
-                    SUNEMIT đã trực tiếp tham gia rất nhiều công trình hộ gia
-                    đình và doanh nghiệp với đa dạng phong cách kiến trúc, kết
-                    cấu và hoàn cảnh thi công. Mỗi công trình chúng tôi luôn đặt
-                    mục tiêu tối ưu hóa lợi ích sử dụng Điện mặt trời, thời gian
+                    <span className="text-[#fa9538] ml-2">
+                      Hải Đăng Solar Energy
+                    </span>{" "}
+                    đã trực tiếp tham gia rất nhiều công trình hộ gia đình và
+                    doanh nghiệp với đa dạng phong cách kiến trúc, kết cấu và
+                    hoàn cảnh thi công. Mỗi công trình chúng tôi luôn đặt mục
+                    tiêu tối ưu hóa lợi ích sử dụng Điện mặt trời, thời gian
                     hoàn vốn nhanh chóng cũng như tăng hiệu quả thẩm mỹ cho công
                     trình bởi sự hiện đại, tiên tiến của những tấm pin năng
                     lượng mặt trời.
@@ -55,14 +62,20 @@ const IntroSession1 = () => {
                       <em>&nbsp;ngay hôm nay !</em>
                     </strong>
                   </p>
-                  <p>Công ty Cổ phần SUNEMIT:</p>
+                  <p>
+                    Công ty Cổ phần{" "}
+                    <span className="text-[#fa9538]">
+                      Hải Đăng Solar Energy
+                    </span>
+                    :
+                  </p>
                   <p>
                     Địa chỉ: 168/1 Hào Nam, P. Ô Chợ Dừa, Q. Đống Đa, Hà Nội
                   </p>
                   <p>Số điện thoại: 0946868498 – 0943968848 – 0826889489</p>
                   <p>
-                    Email: dienmattroi@sunemit.com / vietanh@sunemit.com /
-                    ngocnam@sunemit.com
+                    Email: dienmattroi@gmail.com / vietanh@gmail.com /
+                    ngocnam@gmail.com
                   </p>
                   <p>Mã số thuế: 0105994863 cấp ngày 21/09/2012 tại Hà Nội.</p>
                 </div>
@@ -71,11 +84,7 @@ const IntroSession1 = () => {
             </div>
             <div className="col-md-6">
               <div className="site-about__images wow fadeInRight">
-                <img
-                  className="w-100 d-block"
-                  src="https://sunemit.com/wp-content/uploads/2020/11/Anhr-gioi-thieu-SUNEMIT-01.png"
-                  alt="https://sunemit.com/wp-content/uploads/2020/11/Anhr-gioi-thieu-SUNEMIT-01.png"
-                />
+                <img className="w-100 d-block" src={img} alt="img" />
                 <a
                   data-fancybox
                   className="play-video"

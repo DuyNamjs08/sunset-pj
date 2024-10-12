@@ -1,38 +1,38 @@
 import styled from "styled-components";
+import nb1 from "../../assets/nb1.jpg";
+import nb2 from "../../assets/nb2.jpg";
+import nb3 from "../../assets/nb3.jpg";
+import nb4 from "../../assets/nb4.jpg";
 
 const ListItem1 = () => {
   const items = [
     {
-      link: "https://sunemit.com/he-thong-dien-nang-luong-mat-troi-hoa-luoi-co-luu-tru/",
-      imgSrc:
-        "https://sunemit.com/wp-content/uploads/2020/03/z2060021225050_aeddf6a8604099fb9a13a2d7766580bc-270x250.jpg",
+      link: "/san-pham/",
+      imgSrc: nb1,
       title: "Hệ thống Điện năng lượng mặt trời Hòa lưới có lưu trữ",
       description:
-        "SUNEMIT cung cấp dịch vụ lắp đặt hệ thống điện năng lượng mặt trời hòa lưới có lưu trữ chất lượng cao, bảo hành lâu dài với chi phí tiết kiệm nhất. Liên hệ với chúng tôi qua Hotline 094 6868 498 để được tư vấn hệ…",
+        "Hải Đăng Solar Energy cung cấp dịch vụ lắp đặt hệ thống điện năng lượng mặt trời hòa lưới có lưu trữ chất lượng cao, bảo hành lâu dài với chi phí tiết kiệm nhất. Liên hệ với chúng tôi qua Hotline 094 6868 498 để được tư vấn hệ…",
       delay: "0.2s",
     },
     {
-      link: "https://sunemit.com/he-thong-dien-mat-troi-hoa-luoi-bam-tai-khong-luu-tru/",
-      imgSrc:
-        "https://sunemit.com/wp-content/uploads/2020/09/z2127490406618_f9da1a9295b6f5dfe99d09428308b065-1-270x250.jpg",
+      link: "/san-pham/",
+      imgSrc: nb2,
       title: "Hệ thống điện mặt trời Hòa lưới bám tải không lưu trữ",
       description:
         "Lắp đặt Hệ thống điện năng lượng mặt trời hòa lưới bám tải không lưu trữ cho hộ gia đình hiện nay được đông đảo mọi người quan tâm bởi chi phí lắp đặt, giá thành thi công rẻ; thiết bị hiện đại vì thế mà hệ thống điện mặt trời…",
       delay: "0.4s",
     },
     {
-      link: "https://sunemit.com/tam-pin-nang-luong-mat-troi/",
-      imgSrc:
-        "https://sunemit.com/wp-content/uploads/2020/10/anh-03-1-270x250.jpg",
+      link: "/san-pham/",
+      imgSrc: nb3,
       title: "Tấm pin năng lượng mặt trời",
       description:
         "Tấm pin năng lượng mặt trời là một thiết bị không thể thiếu trong hệ thống năng lượng mặt trời. Nó có chức năng chuyển đổi năng lượng ánh sáng thành điện năng để cung cấp cho các thiết bị điện trong nhà. Vậy Tấm pin năng lượng…",
       delay: "0.6s",
     },
     {
-      link: "https://sunemit.com/bo-luu-tru-dien-nang-luong-mat-troi/",
-      imgSrc:
-        "https://sunemit.com/wp-content/uploads/2020/02/photo-1-15804421056961764095030-150x150.jpg",
+      link: "/san-pham/",
+      imgSrc: nb4,
       title: "Bộ lưu trữ điện năng lượng mặt trời",
       description:
         "Bộ lưu trữ năng lượng mặt trời (hay pin lưu trữ năng lượng mặt trời) gồm hai loại là pin lithium và ắc quy lưu trữ. Thiết bị này có vai trò lưu trữ nguồn năng lượng từ các tấm pin mặt trời để sử dụng vào…",
@@ -52,9 +52,11 @@ const ListItem1 = () => {
               SẢN PHẨM NỔI BẬT
             </h2>
             <p className="title__des wow fadeInDown" data-wow-delay=".3">
-              Bộ sản phẩm Điện Mặt Trời Cao cấp của SUNEMIT đáp ứng 100% tiêu
-              chuẩn điện sạch an toàn, phù hợp với những công trình hiện đại,
-              kiến tạo Môi trường sống xanh - sạch - an toàn - văn minh
+              Bộ sản phẩm Điện Mặt Trời Cao cấp của{" "}
+              <span className="text-[#fa9538]">Hải Đăng Solar Energy</span> đáp
+              ứng 100% tiêu chuẩn điện sạch an toàn, phù hợp với những công
+              trình hiện đại, kiến tạo Môi trường sống xanh - sạch - an toàn -
+              văn minh
             </p>
           </div>
           <div className="site-cateogrys__content">

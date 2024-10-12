@@ -9,6 +9,7 @@ import { headerLinks } from "../constant/header";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaCartShopping } from "react-icons/fa6";
+import logo from "../assets/hải đăng.png";
 
 const MainHeader = ({ onclick }) => {
   return (
@@ -29,7 +30,7 @@ const MainHeader = ({ onclick }) => {
               >
                 <img
                   className=" w-[100px] mb-4 md:mb-0 md:w-[230px]"
-                  src="https://sunemit.com/wp-content/uploads/2020/09/logo-sunemit.png"
+                  src={logo}
                   alt="logo"
                   title="logo"
                 />
@@ -39,7 +40,7 @@ const MainHeader = ({ onclick }) => {
               <FaCartShopping />
             </div>
           </div>
-          <div className="hidden md:block w-[40%] ">
+          <div className="hidden md:block w-[80%] ">
             <div className="flex gap-4">
               <div className="address">
                 <span className="flex items-center gap-2">

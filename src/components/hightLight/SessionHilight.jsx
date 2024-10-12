@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import gradientImage from "../../assets/gradient-1.png";
+import img from "../../assets/Solar-chuyen-gia.jpg";
 
 const SessionHilight = () => {
   return (
@@ -8,18 +9,16 @@ const SessionHilight = () => {
         <div className="row m-0">
           <div className="col-lg-6 p-0 col-vt wow fadeInLeft">
             <div className="images">
-              <img
-                className="d-block w-100"
-                src="https://sunemit.com/wp-content/uploads/2020/10/Solar-sunemit-chuyen-gia.jpg"
-                alt="img"
-              />
+              <img className="d-block w-100" src={img} alt="img" />
             </div>
           </div>
           <div className="col-lg-6 p-0 wow fadeInRight">
             <div className="site-hightlight__content">
               <div>
                 <div className="title">
-                  <span className="title__slogan">Tại sao chọn SUNEMIT</span>
+                  <span className="title__slogan">
+                    Tại sao chọn Hải Đăng Solar Energy
+                  </span>
                   <h2 className="title__heading">
                     Sản phẩm Cao Cấp - Thi công Chuyên Nghiệp Điện năng lượng
                     mặt trời
@@ -28,12 +27,13 @@ const SessionHilight = () => {
                   <p style={{ textAlign: "justify" }}>
                     Với nhân sự chủ đạo là đội ngũ kỹ sư Điện Mặt Trời giàu kinh
                     nghiệm tư vấn và thi công nhiều hệ thống từ năm 2012 tới
-                    nay, SUNEMIT tự tin đưa ra các giải pháp Điện Mặt Trời phù
-                    hợp nhất với đặc thù công trình của mỗi Chủ đầu tư. Khi lắp
-                    Điện Mặt Trời, phải đảm bảo 2 yếu tố quan trọng nhất cho
-                    công trình là Hiệu quả sử dụng và Thẩm mỹ chung. SUNEMIT
-                    hiện đang là đơn vị làm tốt nhất việc này, lựa chọn hàng đầu
-                    mà bạn không thể bỏ qua khi muốn lắp đặt điện mặt trời.
+                    nay, Hải Đăng Solar Energy tự tin đưa ra các giải pháp Điện
+                    Mặt Trời phù hợp nhất với đặc thù công trình của mỗi Chủ đầu
+                    tư. Khi lắp Điện Mặt Trời, phải đảm bảo 2 yếu tố quan trọng
+                    nhất cho công trình là Hiệu quả sử dụng và Thẩm mỹ chung.
+                    Hải Đăng Solar Energy hiện đang là đơn vị làm tốt nhất việc
+                    này, lựa chọn hàng đầu mà bạn không thể bỏ qua khi muốn lắp
+                    đặt điện mặt trời.
                   </p>
                   <p />
                 </div>
@@ -44,9 +44,9 @@ const SessionHilight = () => {
                       <h3>Kiến Thức Chuyên Sâu</h3>
                       <p />
                       <p style={{ textAlign: "justify" }}>
-                        SUNEMIT sở hữu đội ngũ Chuyên Gia điện mặt trời cao cấp
-                        với kinh nghiệm và kiến thức chuyên sâu để hỗ trợ mọi
-                        vấn đề kỹ thuật cho khách hàng
+                        Hải Đăng Solar Energy sở hữu đội ngũ Chuyên Gia điện mặt
+                        trời cao cấp với kinh nghiệm và kiến thức chuyên sâu để
+                        hỗ trợ mọi vấn đề kỹ thuật cho khách hàng
                       </p>
                       <p />
                     </div>
@@ -57,9 +57,9 @@ const SessionHilight = () => {
                       <h3>Sản Phẩm Chất lượng </h3>
                       <p />
                       <p style={{ textAlign: "justify" }}>
-                        Bộ sản phẩm Điện Năng lượng Mặt Trời của SUNEMIT được
-                        đánh giá là sản phẩm đáng tin cậy nhất cho các công
-                        trình chất lượng cao
+                        Bộ sản phẩm Điện Năng lượng Mặt Trời của Hải Đăng Solar
+                        Energy được đánh giá là sản phẩm đáng tin cậy nhất cho
+                        các công trình chất lượng cao
                       </p>
                       <p />
                     </div>
@@ -72,8 +72,8 @@ const SessionHilight = () => {
                       <p style={{ textAlign: "justify" }}>
                         Chỉn chu trong từng mối hàn, kiểm tra kỹ càng từng chi
                         tiết đấu nối là đặc trưng của mỗi công trình mà công ty
-                        điện mặt trời SUNEMIT thi công và mang lại sự hài lòng
-                        trên mong đợi của khách hàng
+                        điện mặt trời Hải Đăng Solar Energy thi công và mang lại
+                        sự hài lòng trên mong đợi của khách hàng
                       </p>
                       <p />
                     </div>
@@ -87,7 +87,7 @@ const SessionHilight = () => {
                         Bảo hành sản phẩm dài hạn, luôn kèm theo gói Bảo Dưỡng
                         định kỳ miễn phí cho mỗi hợp đồng lắp đặt hệ thống Điện
                         năng lượng Mặt Trời đã trở thành đặc điểm tạo nên thế
-                        mạnh của Bộ sản phẩm Điện mặt trời SUNEMIT
+                        mạnh của Bộ sản phẩm Điện mặt trời Hải Đăng Solar Energy
                       </p>
                       <p />
                     </div>

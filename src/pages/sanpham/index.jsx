@@ -1,4 +1,5 @@
 import CategoryItem from "../../components/CategoryItem/CategoryItem";
+import { CommonLoadingModal } from "../../components/model/LoadingModel";
 import LayoutProduct from "../../layout/layoutProduct/LayoutProduct";
 import { useProductSearch } from "../../useQuery/useProducts";
 
@@ -27,6 +28,7 @@ const Products = () => {
           </div>
         </div>
       </LayoutProduct>
+      <CommonLoadingModal isLoadingModalOpen={false} />
     </div>
   );
 };

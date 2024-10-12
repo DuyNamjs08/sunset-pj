@@ -1,57 +1,58 @@
 import styled from "styled-components";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import logo from "../../assets/hải đăng.png";
 
 const Footer = () => {
   const footerData = {
     logo: {
-      href: "https://sunemit.com",
-      src: "https://sunemit.com/wp-content/uploads/2020/09/logo-sunemit.png",
+      href: "https://Hải Đăng Solar Energy.com",
+      src: logo,
       title: "logo",
       alt: "logo",
     },
     support: [
       {
         id: "menu-item-4565",
-        href: "https://sunemit.com/dieu-khoan-su-dung-website/",
+        href: "https://Hải Đăng Solar Energy.com/dieu-khoan-su-dung-website/",
         text: "Điều khoản sử dụng website",
       },
       {
         id: "menu-item-4810",
-        href: "https://sunemit.com/chinh-sach-bao-mat-thong-tin/",
+        href: "https://Hải Đăng Solar Energy.com/chinh-sach-bao-mat-thong-tin/",
         text: "Chính sách bảo mật thông tin",
         rel: "privacy-policy",
       },
       {
         id: "menu-item-6471",
-        href: "https://sunemit.com/chua-phan-loai/",
+        href: "https://Hải Đăng Solar Energy.com/chua-phan-loai/",
         text: "Chưa phân loại",
       },
       {
         id: "menu-item-4567",
-        href: "https://sunemit.com/lien-he/",
+        href: "https://Hải Đăng Solar Energy.com/lien-he/",
         text: "Liên hệ",
       },
       {
         id: "menu-item-4814",
-        href: "https://sunemit.com/sitemap_index.xml",
+        href: "https://Hải Đăng Solar Energy.com/sitemap_index.xml",
         text: "Sitemap",
       },
     ],
     products: [
       {
-        href: "https://sunemit.com/tam-pin-mat-troi/",
+        href: "https://Hải Đăng Solar Energy.com/tam-pin-mat-troi/",
         text: "Tấm Pin Mặt Trời",
       },
       {
-        href: "https://sunemit.com/he-thong-dien-nang-luong-mat-troi-hoa-luoi-co-luu-tru/",
+        href: "https://Hải Đăng Solar Energy.com/he-thong-dien-nang-luong-mat-troi-hoa-luoi-co-luu-tru/",
         text: "Hệ thống Điện mặt trời Có Lưu Trữ",
       },
       {
-        href: "https://sunemit.com/he-thong-dien-mat-troi-hoa-luoi-bam-tai-khong-luu-tru/",
+        href: "https://Hải Đăng Solar Energy.com/he-thong-dien-mat-troi-hoa-luoi-bam-tai-khong-luu-tru/",
         text: "Hệ thống Điện mặt trời Hòa Lưới",
       },
       {
-        href: "https://sunemit.com/san-pham/pin-luu-tru-dien-mat-troi-lifepo4-51-2v-100ah/",
+        href: "https://Hải Đăng Solar Energy.com/san-pham/pin-luu-tru-dien-mat-troi-lifepo4-51-2v-100ah/",
         text: "Pin Lithium lưu trữ điện",
       },
     ],
@@ -61,8 +62,8 @@ const Footer = () => {
         href: "javascript:void()",
       },
       {
-        text: "Email: dienmattroi@sunemit.com",
-        href: "mailto:dienmattroi@sunemit.com",
+        text: "Email: dienmattroi@Hải Đăng Solar Energy.com",
+        href: "mailto:dienmattroi@Hải Đăng Solar Energy.com",
       },
       {
         text: "Hotline: 094 396 8848 - 094 6868 498",
@@ -84,7 +85,7 @@ const Footer = () => {
                 <div className="footer__content">
                   <a
                     href={footerData.logo.href}
-                    title="Điện năng lượng mặt trời, điện mặt trời, sunemit"
+                    title="Điện năng lượng mặt trời, điện mặt trời, Hải Đăng Solar Energy"
                   >
                     <img
                       src={footerData.logo.src}
@@ -141,9 +142,10 @@ const Footer = () => {
               <div className="col-md-8">
                 <div className="coppy">
                   <span>
-                    © 2012 - 2024 CÔNG TY CỔ PHẦN SUNEMIT. All rights reserved.{" "}
+                    © 2012 - 2024 CÔNG TY CỔ PHẦN Hải Đăng Solar Energy. All
+                    rights reserved.{" "}
                     <a
-                      href="https://www.dmca.com/Protection/Status.aspx?ID=156baa22-fdd9-4b72-951e-975c946bb509&refurl=https://sunemit.com/"
+                      href="https://www.dmca.com/Protection/Status.aspx?ID=156baa22-fdd9-4b72-951e-975c946bb509&refurl=https://Hải Đăng Solar Energy.com/"
                       title="DMCA.com Protection Status"
                       className="dmca-badge"
                     >
@@ -160,20 +162,26 @@ const Footer = () => {
                 <div className="mxh">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/sunemit/" title="mxh">
+                      <a
+                        href="https://www.facebook.com/Hải Đăng Solar Energy/"
+                        title="mxh"
+                      >
                         <FaFacebook aria-hidden="true" />
                       </a>
                     </li>
                     <li>
                       <a
-                        href="https://www.instagram.com/dienmattroisunemit/"
+                        href="https://www.instagram.com/dienmattroiHải Đăng Solar Energy/"
                         title="mxh"
                       >
                         <FaInstagram aria-hidden="true" />
                       </a>
                     </li>
                     <li>
-                      <a href="https://twitter.com/isunemit" title="mxh">
+                      <a
+                        href="https://twitter.com/iHải Đăng Solar Energy"
+                        title="mxh"
+                      >
                         <FaTwitter aria-hidden="true" />
                       </a>
                     </li>

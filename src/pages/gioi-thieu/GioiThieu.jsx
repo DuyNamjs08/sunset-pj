@@ -17,7 +17,7 @@ const GioiThieu = () => {
       path: "/",
     },
     {
-      title: "SUNEMIT – Giải pháp hàng đầu về Điện Mặt Trời",
+      title: "Hải Đăng Solar Energy – Giải pháp hàng đầu về Điện Mặt Trời",
       path: "",
     },
   ];
@@ -40,10 +40,11 @@ const GioiThieu = () => {
           <span className="title__slogan" />
           <h2 className="title__heading">Dự án mới cập nhật</h2>
           <p className="title__des">
-            SUNEMIT luôn cam kết tạo ra giá trị cao nhất cho khách hàng từ những
-            sản phẩm với chất lượng tốt nhất. Mỗi công trình SUNEMIT thi công
-            luôn đáp ứng mọi yêu cầu kỹ thuật cao nhất, đạt hiệu quả thẩm mỹ ấn
-            tượng từ dân dụng (&lt;200Kwp) tới Quy mô công nghiệp (&gt;1Mwp) .
+            Hải Đăng Solar Energy luôn cam kết tạo ra giá trị cao nhất cho khách
+            hàng từ những sản phẩm với chất lượng tốt nhất. Mỗi công trình Hải
+            Đăng Solar Energy thi công luôn đáp ứng mọi yêu cầu kỹ thuật cao
+            nhất, đạt hiệu quả thẩm mỹ ấn tượng từ dân dụng (&lt;200Kwp) tới Quy
+            mô công nghiệp (&gt;1Mwp) .
           </p>
         </div>
         <ListPj2 />
@@ -103,7 +104,7 @@ export default GioiThieu;
 // const listIten = [
 //   {
 //     id: 1,
-//     imageSrc: "https://sunemit.com/wp-content/uploads/2020/09/da3.jpg",
+//     imageSrc: "https://Hải Đăng Solar Energy.com/wp-content/uploads/2020/09/da3.jpg",
 //     title: "Tấm Pin Mặt Trời Hiệu Suất Cao",
 //     description:
 //       "Những tấm pin mặt trời hiệu suất cao là xương sống của một Hệ thống Điện Mặt Trời. Nó quyết định sự hoạt động bền bỉ, sinh điện liên tục trong 30 năm, phục vụ bạn và gia đình bằng nguồn năng lượng sạch từ thiên nhiên.",
@@ -111,23 +112,23 @@ export default GioiThieu;
 //   {
 //     id: 2,
 //     imageSrc:
-//       "https://sunemit.com/wp-content/uploads/2018/05/sunny-boy-wall-e1603188446349.jpg",
+//       "https://Hải Đăng Solar Energy.com/wp-content/uploads/2018/05/sunny-boy-wall-e1603188446349.jpg",
 //     title: "Inverter - Trái tim của Hệ thống",
 //     description:
-//       "Inverter Điện Mặt Trời do SUNEMIT cung cấp luôn được đánh giá cao bởi hiệu suất chuyển đổi điện tuyệt vời, cấu hình mạnh mẽ, hoạt động êm ái, thiết kế sang trọng làm tăng thêm thẩm mỹ cho những ngôi nhà sở hữu Hệ thống Điện Mặt Trời Cao Cấp.",
+//       "Inverter Điện Mặt Trời do Hải Đăng Solar Energy cung cấp luôn được đánh giá cao bởi hiệu suất chuyển đổi điện tuyệt vời, cấu hình mạnh mẽ, hoạt động êm ái, thiết kế sang trọng làm tăng thêm thẩm mỹ cho những ngôi nhà sở hữu Hệ thống Điện Mặt Trời Cao Cấp.",
 //   },
 //   {
 //     id: 3,
 //     imageSrc:
-//       "https://sunemit.com/wp-content/uploads/2020/09/22222-1-scaled-1-e1603188143839.jpg",
+//       "https://Hải Đăng Solar Energy.com/wp-content/uploads/2020/09/22222-1-scaled-1-e1603188143839.jpg",
 //     title: "Giải pháp đồng bộ",
 //     description:
-//       "SUNEMIT là Chuyên gia Uy tín hàng đầu về Điện Mặt Trời trong việc cung cấp các giải pháp đồng bộ đến Khách hàng sử dụng cuối...",
+//       "Hải Đăng Solar Energy là Chuyên gia Uy tín hàng đầu về Điện Mặt Trời trong việc cung cấp các giải pháp đồng bộ đến Khách hàng sử dụng cuối...",
 //   },
 //   {
 //     id: 4,
 //     imageSrc:
-//       "https://sunemit.com/wp-content/uploads/2020/09/dien-mat-troi-noi-luoi-1.png",
+//       "https://Hải Đăng Solar Energy.com/wp-content/uploads/2020/09/dien-mat-troi-noi-luoi-1.png",
 //     title: "Điện Mặt Trời Hòa lưới",
 //     description:
 //       "Giải pháp Điện Mặt Trời Hòa lưới là tối ưu về chi phí và hiệu quả hoạt động cho những hộ gia đình tại Việt Nam hiện nay.",
@@ -135,7 +136,7 @@ export default GioiThieu;
 //   {
 //     id: 5,
 //     imageSrc:
-//       "https://sunemit.com/wp-content/uploads/2020/09/giai-phap-dien-mat-troi-luu-tru-vietcotek-energy-1-840x424-1.png",
+//       "https://Hải Đăng Solar Energy.com/wp-content/uploads/2020/09/giai-phap-dien-mat-troi-luu-tru-vietcotek-energy-1-840x424-1.png",
 //     title: "Điện Mặt Trời Hòa lưới có Lưu trữ",
 //     description:
 //       "Điện mặt trời hòa lưới có lưu trữ thích hợp sử dụng cho khu vực thường xuyên mất điện lưới, hoặc điện lưới không ổn định...",

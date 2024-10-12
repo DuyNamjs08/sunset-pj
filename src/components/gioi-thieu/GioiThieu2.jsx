@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import bg from "../../assets/bg_01.png";
 import { FaPlay } from "react-icons/fa";
+import img from "../../assets/gioi-thieu01.png";
 
 const GioiThieu2 = () => {
   return (
@@ -20,17 +21,18 @@ const GioiThieu2 = () => {
                   <img
                     style={{ maxWidth: 500, margin: "auto" }}
                     className="d-block"
-                    src="https://sunemit.com/wp-content/uploads/2020/10/Anhr-gioi-thieu-SUNEMIT-01.png"
+                    src={img}
                     alt="img"
                   />
                 </div>
                 <div className="des the_content">
                   <h1 style={{ textAlign: "center" }}>
-                    SUNEMIT – GIẢI PHÁP HÀNG ĐẦU VỀ ĐIỆN MẶT TRỜI TẠI VIỆT NAM
+                    Hải Đăng Solar Energy – GIẢI PHÁP HÀNG ĐẦU VỀ ĐIỆN MẶT TRỜI
+                    TẠI VIỆT NAM
                   </h1>
                   <p style={{ textAlign: "justify" }}>
                     <strong>
-                      <a href="http://sunemit.com">SUNEMIT</a>
+                      <a href="/">Hải Đăng Solar Energy</a>
                     </strong>{" "}
                     là đơn vị cung cấp giải pháp điện năng lượng mặt trời uy tín
                     và chuyên nghiệp hàng đầu Việt Nam được thành lập từ năm
@@ -53,18 +55,16 @@ const GioiThieu2 = () => {
                   <p style={{ textAlign: "justify" }}>
                     Năm 2018-2020, với Cơ chế khuyến khích Điện Mặt Trời của
                     Chính phủ, mọi người dân đều biết đến{" "}
-                    <a href="https://sunemit.com/dien-nang-luong-mat-troi-ap-mai/">
-                      Điện mặt trời áp mái
-                    </a>
-                    , Điện mặt trời thông qua công tơ 2 chiều Điện lực có thể
-                    hòa lưới bán lại điện dư thừa cho EVN. Khách hàng của{" "}
-                    <strong>SUNEMIT</strong> lắp Điện mặt trời có thể tạo một
-                    nguồn thu nhập thụ động “vui vẻ” ngoài lợi ích giảm tiền
-                    điện tiêu thụ chính đáng, khả năng chống nóng mái nhà rất
-                    tốt do hấp thụ nhiệt trên cao, không bỏ phí diện tích mái
-                    còn trống bởi những lớp tôn chống nóng cổ điển dần không còn
-                    phù hợp với những ngôi nhà hiện đại, cao cấp và thông minh
-                    ngày nay.
+                    <a href="/">Điện mặt trời áp mái</a>, Điện mặt trời thông
+                    qua công tơ 2 chiều Điện lực có thể hòa lưới bán lại điện dư
+                    thừa cho EVN. Khách hàng của{" "}
+                    <strong>Hải Đăng Solar Energy</strong> lắp Điện mặt trời có
+                    thể tạo một nguồn thu nhập thụ động “vui vẻ” ngoài lợi ích
+                    giảm tiền điện tiêu thụ chính đáng, khả năng chống nóng mái
+                    nhà rất tốt do hấp thụ nhiệt trên cao, không bỏ phí diện
+                    tích mái còn trống bởi những lớp tôn chống nóng cổ điển dần
+                    không còn phù hợp với những ngôi nhà hiện đại, cao cấp và
+                    thông minh ngày nay.
                   </p>
                   <p style={{ textAlign: "justify" }}>
                     Điện Mặt Trời từng bước trở thành thiết bị cần phải có cho
@@ -85,34 +85,33 @@ const GioiThieu2 = () => {
                   <p style={{ textAlign: "justify" }}>
                     <span style={{ fontSize: "12pt" }}>
                       Hiểu được lo lắng này của Khách hàng, từ năm 2018,{" "}
-                      <strong>SUNEMIT</strong> quyết tâm phát triển Bộ Giải pháp
-                      Thiết bị Điện mặt trời hòa lưới đồng bộ phù hợp nhất mang
-                      duy nhất 1 thương hiệu <strong>SUNEMIT</strong>, do chính
-                      tay các kỹ sư ưu tú nhất của chúng tôi giám sát quá trình
-                      sản xuất, từ chọn lọc nguyên liệu đầu vào, quy trình lắp
-                      ráp hoàn toàn bằng robot, trực tiếp kiểm tra sản phẩm bởi
-                      các bài test điện lực chuyên nghiệp nhất nhằm đảm bảo 1
-                      chất lượng quy chuẩn cao cấp và đáng tin, mang thương hiệu{" "}
-                      <strong>SUNEMIT</strong> đến với khách hàng như là nơi
-                      xứng đáng gửi trọn niềm tin của những khách hàng thông
-                      thái.
+                      <strong>Hải Đăng Solar Energy</strong> quyết tâm phát
+                      triển Bộ Giải pháp Thiết bị Điện mặt trời hòa lưới đồng bộ
+                      phù hợp nhất mang duy nhất 1 thương hiệu{" "}
+                      <strong>Hải Đăng Solar Energy</strong>, do chính tay các
+                      kỹ sư ưu tú nhất của chúng tôi giám sát quá trình sản
+                      xuất, từ chọn lọc nguyên liệu đầu vào, quy trình lắp ráp
+                      hoàn toàn bằng robot, trực tiếp kiểm tra sản phẩm bởi các
+                      bài test điện lực chuyên nghiệp nhất nhằm đảm bảo 1 chất
+                      lượng quy chuẩn cao cấp và đáng tin, mang thương hiệu{" "}
+                      <strong>Hải Đăng Solar Energy</strong> đến với khách hàng
+                      như là nơi xứng đáng gửi trọn niềm tin của những khách
+                      hàng thông thái.
                     </span>
                   </p>
                   <p style={{ textAlign: "justify" }}>
                     Hơn 2000+ khách hàng đã sử dụng Bộ sản phẩm và hài lòng
                     tuyệt đối bởi những sản phẩm Điện Mặt Trời do{" "}
-                    <strong>SUNEMIT</strong> cung cấp và chịu trách nhiệm bảo
-                    hành, bảo dưỡng từng chi tiết nhỏ nhất của Hệ thống, từ dân
-                    dụng tới công nghiệp. Khi lựa chọn <strong>SUNEMIT</strong>,
-                    khách hàng không còn lo lắng về{" "}
-                    <a href="https://sunemit.com/gia-lap-dien-mat-troi/">
-                      giá lắp điện mặt trời
-                    </a>{" "}
-                    có đắt không, phải bảo hành sản phẩm ở đâu, với ai, như thế
-                    nào khi đơn vị lắp đặt điện mặt trời cho gia đình mình không
-                    còn hoạt đồng nữa, mọi thứ đều quy về một mối quan tâm duy
-                    nhất, chúng tôi chăm sóc cho sản phẩm của bạn từ A-Z, khách
-                    hàng chỉ việc trải nghiệm và phản hồi cho chúng tôi.
+                    <strong>Hải Đăng Solar Energy</strong> cung cấp và chịu
+                    trách nhiệm bảo hành, bảo dưỡng từng chi tiết nhỏ nhất của
+                    Hệ thống, từ dân dụng tới công nghiệp. Khi lựa chọn{" "}
+                    <strong>Hải Đăng Solar Energy</strong>, khách hàng không còn
+                    lo lắng về <a href="/">giá lắp điện mặt trời</a> có đắt
+                    không, phải bảo hành sản phẩm ở đâu, với ai, như thế nào khi
+                    đơn vị lắp đặt điện mặt trời cho gia đình mình không còn
+                    hoạt đồng nữa, mọi thứ đều quy về một mối quan tâm duy nhất,
+                    chúng tôi chăm sóc cho sản phẩm của bạn từ A-Z, khách hàng
+                    chỉ việc trải nghiệm và phản hồi cho chúng tôi.
                   </p>
                   <p style={{ textAlign: "justify" }}>
                     <span
@@ -121,10 +120,10 @@ const GioiThieu2 = () => {
                       }}
                     >
                       Với thương hiệu của mình, mỗi công trình/dự án Điện mặt
-                      trời mà <strong>SUNEMIT</strong> tham gia luôn để lại
-                      những ấn tượng đặc biệt sâu sắc về sự chuyên nghiệp, tận
-                      tâm và những giải pháp thông minh mang lại lợi ích lâu dài
-                      và bền vững cho quý Khách hàng, Chủ đầu tư.
+                      trời mà <strong>Hải Đăng Solar Energy</strong> tham gia
+                      luôn để lại những ấn tượng đặc biệt sâu sắc về sự chuyên
+                      nghiệp, tận tâm và những giải pháp thông minh mang lại lợi
+                      ích lâu dài và bền vững cho quý Khách hàng, Chủ đầu tư.
                     </span>
                   </p>
                   <p style={{ textAlign: "justify" }}>
@@ -134,9 +133,9 @@ const GioiThieu2 = () => {
                       }}
                     >
                       Đó là món quà tinh thần lớn nhất và là niềm tự hào khi{" "}
-                      <strong>SUNEMIT</strong> luôn được đánh giá là Chuyên gia
-                      hàng đầu về Cung cấp giải pháp, Vật tư thiết bị và thi
-                      công các hệ thống Điện mặt trời tại Việt Nam.
+                      <strong>Hải Đăng Solar Energy</strong> luôn được đánh giá
+                      là Chuyên gia hàng đầu về Cung cấp giải pháp, Vật tư thiết
+                      bị và thi công các hệ thống Điện mặt trời tại Việt Nam.
                     </span>
                   </p>
                   <p style={{ textAlign: "justify" }}>
@@ -150,8 +149,8 @@ const GioiThieu2 = () => {
                       kết cấu mái nhà, từ cổ điển tới hiện đại, luôn đảm bảo
                       cung cấp cho khách hàng những giải pháp thông minh và an
                       toàn nhất cho Hệ thống Điện mặt trời, mang lại sự an tâm
-                      tuyệt đối cho khách hàng khi trao gửi niềm tin cho
-                      SUNEMIT.
+                      tuyệt đối cho khách hàng khi trao gửi niềm tin cho Hải
+                      Đăng Solar Energy.
                     </span>
                   </p>
                   <h2 style={{ textAlign: "justify" }}>Tầm Nhìn và Sứ Mệnh</h2>
@@ -164,11 +163,11 @@ const GioiThieu2 = () => {
                   </ul>
                   <p style={{ textAlign: "justify" }}>
                     <span style={{ fontWeight: 400 }}>
-                      <strong>SUNEMIT</strong> hướng đến trở thành doanh nghiệp
-                      hàng đầu trong thị trường năng lượng tái tạo ở Việt Nam
-                      đặc biệt là lĩnh vực lắp đặt và cung cấp hệ thống Điện
-                      năng lượng mặt trời. Với tư duy của một công ty công nghệ
-                      –{" "}
+                      <strong>Hải Đăng Solar Energy</strong> hướng đến trở thành
+                      doanh nghiệp hàng đầu trong thị trường năng lượng tái tạo
+                      ở Việt Nam đặc biệt là lĩnh vực lắp đặt và cung cấp hệ
+                      thống Điện năng lượng mặt trời. Với tư duy của một công ty
+                      công nghệ –{" "}
                     </span>
                     <b>“ Thông minh ● Tiết kiệm ● Thân thiện môi trường”</b>
                     <span style={{ fontWeight: 400 }}>
@@ -190,12 +189,12 @@ const GioiThieu2 = () => {
                     <span style={{ fontWeight: 400 }}>
                       Việt Nam là quốc gia có rất nhiều lợi thế về Năng lượng
                       tái tạo – Điện mặt trời – Điện gió. Vì thế sứ mệnh mà{" "}
-                      <strong>SUNEMIT</strong> luôn muốn mang đến cho khách hàng
-                      là những sự tiến bộ công nghệ mới nhất, giải pháp hoàn hảo
-                      nhất và những trải nghiệm hài lòng tuyệt đối khi sử dụng
-                      Năng lượng tái tạo cho cuộc sống của mình. Thực hiện sứ
-                      mệnh đó, chúng tôi muốn đóng góp những điều tốt đẹp cho xã
-                      hội và đất nước.&nbsp;
+                      <strong>Hải Đăng Solar Energy</strong> luôn muốn mang đến
+                      cho khách hàng là những sự tiến bộ công nghệ mới nhất,
+                      giải pháp hoàn hảo nhất và những trải nghiệm hài lòng
+                      tuyệt đối khi sử dụng Năng lượng tái tạo cho cuộc sống của
+                      mình. Thực hiện sứ mệnh đó, chúng tôi muốn đóng góp những
+                      điều tốt đẹp cho xã hội và đất nước.&nbsp;
                     </span>
                   </p>
                   <p style={{ textAlign: "justify" }}>
@@ -208,10 +207,11 @@ const GioiThieu2 = () => {
                   </p>
                   <p style={{ textAlign: "justify" }}>
                     <span style={{ fontWeight: 400 }}>
-                      <strong>SUNEMIT</strong> cam kết tạo ra những giá trị cao
-                      nhất – giải pháp đầu tư tiết kiệm – sản phẩm có chứng nhận
-                      chất lượng – kỹ thuật thi công chuyên nghiệp – chế độ bảo
-                      hành, bảo trì dài hạn suốt dòng đời sản phẩm.
+                      <strong>Hải Đăng Solar Energy</strong> cam kết tạo ra
+                      những giá trị cao nhất – giải pháp đầu tư tiết kiệm – sản
+                      phẩm có chứng nhận chất lượng – kỹ thuật thi công chuyên
+                      nghiệp – chế độ bảo hành, bảo trì dài hạn suốt dòng đời
+                      sản phẩm.
                     </span>
                   </p>
                 </div>

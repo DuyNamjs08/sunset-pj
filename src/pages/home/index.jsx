@@ -9,8 +9,10 @@ import Slide1 from "../../components/slide/Slide1";
 import PartnerSlider from "../../components/slide/Slide2";
 import SessionHilight from "../../components/hightLight/SessionHilight";
 import Advance from "../../components/loi-khuyen/Advance";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Banner />
@@ -21,7 +23,10 @@ const Home = () => {
               SUNEMIT cung cấp Giải pháp Điện mặt trời hoàn hảo cho mọi công
               trình
             </h2>
-            <Button1 label={"Liên hệ ngay"} />
+            <Button1
+              onClick={() => navigate("lien-he/")}
+              label={"Liên hệ ngay"}
+            />
           </div>
         </div>
       </StyleBanner>
