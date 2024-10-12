@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { getHeaders, handleError } from "../helpers/getHeaders";
-import { defaultLimit } from "../configUrl /configPagnigate";
+import { defaultLimit } from "../configUrl/configPagnigate";
 
 const fetchDataSearch = async (query) => {
   const headers = getHeaders("json");
