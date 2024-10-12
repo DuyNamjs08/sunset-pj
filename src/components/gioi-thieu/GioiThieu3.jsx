@@ -86,7 +86,9 @@ const GioiThieu3 = () => {
                     </div>
                   }
                   backComponent={
-                    <div style={styles.description}>{item.description}</div>
+                    <div className="des p-4" style={styles.description}>
+                      {item.description}
+                    </div>
                   }
                 />
               </div>
@@ -167,6 +169,19 @@ const GioiThieu3Style = styled.div`
     line-height: 1.5;
     color: #777b93;
     margin-bottom: 15px;
+  }
+  .des {
+    background: linear-gradient(90deg, #ffffff -80%, #5dbafc) no-repeat center;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.5;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
   }
 `;
 export default GioiThieu3;

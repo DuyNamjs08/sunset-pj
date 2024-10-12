@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 const TRANG_CHU = "/";
 const GIOI_THIEU = "/cong-ty-dien-mat-troi-uy-tin/";
 const SAN_PHAM = "/san-pham";
-const DICH_VU = "/dich-vu";
+// const DICH_VU = "/dich-vu";
 const DU_AN = "/du-an";
 const CAU_HOI_THUONG_GAP =
   "/nhung-cau-hoi-thuong-gap-ve-he-thong-dien-nang-luong-mat-troi/";
@@ -73,7 +73,7 @@ export const RouterWeb = [
   },
   {
     id: 4,
-    path: DICH_VU,
+    path: "/",
     role: ["1", "2", "3"],
     component: (
       <div>
@@ -83,7 +83,7 @@ export const RouterWeb = [
     child: [
       {
         path: "dich-vu-lap-dat-he-thong-dien-nang-luong-mat-troi-tron-goi/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Pages.Service />,
       },
       {
         path: "dich-vu-van-hanh-va-bao-tri-he-thong-dien-mat-troi-tron-goi/", // Đường dẫn tương đối

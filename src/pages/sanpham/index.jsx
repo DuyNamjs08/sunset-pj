@@ -1,5 +1,6 @@
 import CategoryItem from "../../components/CategoryItem/CategoryItem";
 import LayoutProduct from "../../layout/layoutProduct/LayoutProduct";
+import { useProductSearch } from "../../useQuery/useProducts";
 
 const breadcrumbItems = [
   {
@@ -12,6 +13,11 @@ const breadcrumbItems = [
   },
 ];
 const Products = () => {
+  const { data: dataProduct, isLoading: isLoadingProduct } = useProductSearch({
+    offset: 0,
+    productName: "",
+  });
+  console.log(dataProduct, isLoadingProduct);
   return (
     <div>
       <LayoutProduct breadcrumbData={breadcrumbItems}>

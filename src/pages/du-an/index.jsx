@@ -15,11 +15,13 @@ const DuAn = () => {
   return (
     <ProjectStyle>
       <BreadCum data={breadcrumbItems} />
-      <ListPj2 />
+      <div className="container">
+        <ListPj2 />
+      </div>
     </ProjectStyle>
   );
 };
-const ProjectStyle = styled.div`
+export const ProjectStyle = styled.div`
   .site-project {
     padding: 50px 0;
   }
