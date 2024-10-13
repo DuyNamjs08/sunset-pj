@@ -29,7 +29,7 @@ const MainHeader = ({ onclick }) => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
-        setIsFixed(true);
+        // setIsFixed(true);
       } else {
         setIsFixed(false);
       }

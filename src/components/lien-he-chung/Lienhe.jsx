@@ -156,7 +156,7 @@ const Lienhe = () => {
               </Form.Item>
 
               <Form.Item>
-                <Button type="primary" htmlType="submit" className="w-full">
+                <Button type="primary" htmlType="submit" className="w-[100px]">
                   Gửi đi
                 </Button>
               </Form.Item>
