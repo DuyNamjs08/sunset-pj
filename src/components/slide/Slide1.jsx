@@ -25,7 +25,7 @@ const Slide1 = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
   };
   return (
     <Slide1Style>
@@ -168,6 +168,14 @@ const Slide1Style = styled.div`
   }
   .slick-dots {
     bottom: -60px;
+  }
+  @media (max-width: 768px) {
+    .site-customer .item p {
+      font-size: 16px;
+    }
+    .title__heading {
+      font-size: 25px;
+    }
   }
 `;
 

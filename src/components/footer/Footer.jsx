@@ -216,15 +216,7 @@ const FooterStyle = styled.div`
     margin-right: auto;
     margin-left: auto;
   }
-  .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-  }
+
   .col-md-3 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 25%;
@@ -300,6 +292,28 @@ const FooterStyle = styled.div`
     display: flex;
     align-items: center;
     gap: 6px;
+  }
+  @media (max-width: 768px) {
+    .col-md-3 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .row {
+      margin: initial;
+    }
+    .footer {
+      padding: 12px 0;
+    }
+    .footer__content img {
+      width: 150px;
+    }
+    .footer__content {
+      margin-bottom: 12px;
+    }
+    .col-6 {
+      flex: 0 0 48%;
+      max-width: 48%;
+    }
   }
 `;
 export default Footer;

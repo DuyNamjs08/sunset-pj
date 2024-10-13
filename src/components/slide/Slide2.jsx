@@ -164,5 +164,10 @@ const PartnerSliderStyle = styled.div`
   .slick-list {
     margin: 0 -10px; /* Bù lại padding để không bị thừa khoảng trống */
   }
+  @media (max-width: 768px) {
+    .title__heading {
+      font-size: 22px;
+    }
+  }
 `;
 export default PartnerSlider;

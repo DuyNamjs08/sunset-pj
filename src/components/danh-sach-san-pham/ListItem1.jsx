@@ -63,7 +63,7 @@ const ListItem1 = () => {
             <div className="row">
               {items.map((item, index) => (
                 <div
-                  className="col-md-4 wow fadeInDown"
+                  className=" col-md-4 wow fadeInDown"
                   data-wow-delay={item.delay}
                   key={index}
                 >
@@ -207,6 +207,16 @@ const ListItem1Style = styled.div`
   .content-categorys:hover .images img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+  }
+  @media (max-width: 768px) {
+    .col-md-4 {
+      width: 100%;
+      max-width: 100%;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `;
 export default ListItem1;

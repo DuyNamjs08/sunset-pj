@@ -8,7 +8,7 @@ const IntroSession1 = () => {
     <IntroSession1Style bg={bg}>
       <section className="site-about">
         <div className="container">
-          <div className="row">
+          <div className="row max-md:flex-col-reverse">
             <div className="col-md-6">
               <div className="site-about__content">
                 <div className="title">
@@ -197,6 +197,17 @@ const IntroSession1Style = styled.div`
     justify-content: flex-end;
     gap: 4px;
     margin-top: -70px;
+  }
+  @media (max-width: 768px) {
+    .col-md-6 {
+      max-width: 100%;
+    }
+    .row {
+      gap: 20px;
+    }
+    .play-video {
+      margin-top: 25px;
+    }
   }
 `;
 

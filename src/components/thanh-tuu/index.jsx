@@ -111,5 +111,21 @@ const AchivementStyle = styled.div`
     font-size: 16px;
     line-height: 22px;
   }
+  @media (max-width: 768px) {
+    .col-md-3 {
+      max-width: 47%;
+      flex: 0 0 47%;
+    }
+    .row {
+      justify-content: space-between;
+      row-gap: 20px;
+    }
+    .site-achievement .item-achievement .text .number {
+      font-size: 30px;
+    }
+    .site-achievement .item-achievement .text p {
+      font-size: 14px;
+    }
+  }
 `;
 export default Achivement;

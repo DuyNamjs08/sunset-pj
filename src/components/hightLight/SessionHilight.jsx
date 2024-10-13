@@ -212,6 +212,33 @@ const SessionHilightStyle = styled.div`
     color: #fff;
     line-height: 1.5;
   }
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-lg-6 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+    }
+    .title__heading {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+    .site-hightlight__content .title p {
+      font-size: 14px;
+    }
+    .site-hightlight .list-content {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 12px;
+    }
+  }
 `;
 
 export default SessionHilight;

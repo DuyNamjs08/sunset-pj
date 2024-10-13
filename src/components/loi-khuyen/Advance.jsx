@@ -286,5 +286,43 @@ const AdvanceStyle = styled.div`
     background: #093;
     color: #fff;
   }
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-lg-6 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+    }
+    .site-advisory .form-advisory {
+      padding: 12px;
+    }
+    .site-advisory__contact h2 {
+      font-size: 25px;
+    }
+    .site-advisory__contact img {
+      width: 150px;
+      height: 150px;
+    }
+    .site-advisory__contact a {
+      font-size: 25px;
+    }
+    .site-advisory__contact {
+      padding: 20px 95px;
+    }
+    .site-advisory .title h2 {
+      font-size: 25px;
+    }
+    .site-advisory form .btn-nh {
+      min-width: 150px;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
 `;
 export default Advance;

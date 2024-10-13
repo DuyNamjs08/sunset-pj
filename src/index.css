@@ -46,3 +46,6 @@ select:focus {
   border-color: #3333;
   box-shadow: none;
 }
+.ant-drawer-body {
+  padding: 0 !important;
+}

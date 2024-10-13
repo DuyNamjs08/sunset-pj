@@ -10,11 +10,33 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaCartShopping } from "react-icons/fa6";
 import logo from "../assets/hải đăng.png";
+import { useEffect, useState } from "react";
 
 const MainHeader = ({ onclick }) => {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <section className="header">
-      <div className="container mx-[auto]">
+    <section
+      className={`header ${
+        isFixed ? "fixed w-full bg-[#fff] shadow-lg top-0 z-[10] " : ""
+      }`}
+    >
+      <div className="container  mx-[auto]">
         <div className="flex items-center justify-center md:justify-between">
           <div className="flex justify-between items-center w-full px-4 md:px-0">
             <div
@@ -29,7 +51,7 @@ const MainHeader = ({ onclick }) => {
                 title="Điện năng lượng mặt trời, điện mặt trời, sunemit"
               >
                 <img
-                  className=" w-[100px] mb-4 md:mb-0 md:w-[230px]"
+                  className=" w-[80px] h-[60px] mb-4 md:mb-0 md:w-[230px]"
                   src={logo}
                   alt="logo"
                   title="logo"
@@ -41,7 +63,7 @@ const MainHeader = ({ onclick }) => {
             </div>
           </div>
           <div className="hidden md:block w-[80%] ">
-            <div className="flex gap-4">
+            <div className="flex gap-5 items-center">
               <div className="address">
                 <span className="flex items-center gap-2">
                   <FaMapMarkerAlt className="text-[30px] text-[#093]" />
@@ -57,9 +79,13 @@ const MainHeader = ({ onclick }) => {
                     title="phone"
                   >
                     <FaPhoneAlt className="" />
-                    094 6868 498
+                    <div>
+                      <div className=" leading-6 ">094 6868 498</div>
+                      <span className="block text-[14px] text-[#000]">
+                        Hotline
+                      </span>
+                    </div>
                   </a>
-                  <span>Hotline</span>
                 </div>
               </div>
             </div>
@@ -68,7 +94,7 @@ const MainHeader = ({ onclick }) => {
         <Nav className="hidden md:block">
           <MenuList>
             {headerLinks.map((link, index) => (
-              <MenuItem key={index}>
+              <MenuItem key={index + 10}>
                 <StyledLink to={link.url}>
                   {link.text} {link.subMenu && <FaAngleDown />}
                 </StyledLink>

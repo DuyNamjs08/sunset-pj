@@ -3,7 +3,7 @@ import { socialLinks } from "../constant/header";
 const Header = () => {
   return (
     <header>
-      <section className="header-top flex justify-center text-[#777b93] bg-[whitesmoke]">
+      <section className="header-top flex justify-center text-[#777b93] bg-[whitesmoke] py-2 ">
         <div className="container">
           <div className="flex justify-between">
             <div className="col-md-6">

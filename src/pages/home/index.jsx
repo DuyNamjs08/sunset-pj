@@ -17,13 +17,14 @@ const Home = () => {
     <div>
       <Banner />
       <StyleBanner>
-        <div className="max-w-[1200px] mx-auto">
+        <div className="container mx-auto">
           <div className="flex items-center gap-[30px]">
             <h2>
               SUNEMIT cung cấp Giải pháp Điện mặt trời hoàn hảo cho mọi công
               trình
             </h2>
             <Button1
+              className={"btn-contact"}
               onClick={() => navigate("lien-he/")}
               label={"Liên hệ ngay"}
             />
@@ -46,10 +47,27 @@ const StyleBanner = styled.div`
   min-height: 180px;
   display: flex;
   align-items: center;
+
   h2 {
     font-size: 36px;
     color: #fff;
     font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 20px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .btn-contact {
+      min-width: 120px;
+      height: 40px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 

@@ -80,7 +80,7 @@ const ListPj1 = () => {
 };
 const ListPj1Style = styled.div`
   .site-project {
-    padding-bottom: 50px;
+    padding: 50px 0;
   }
   .container {
     max-width: 1200px;
@@ -146,6 +146,15 @@ const ListPj1Style = styled.div`
   }
   .fadeInLeft:hover h5 {
     color: #093 !important;
+  }
+  @media (max-width: 768px) {
+    .row {
+      row-gap: 30px;
+    }
+    .col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
 `;
 
