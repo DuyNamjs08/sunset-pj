@@ -11,6 +11,7 @@ import LichKhaoSat from "./lich-khao-sat/LichKhaoSat.jsx";
 import GioiThieu from "./gioi-thieu/GioiThieu.jsx";
 import DetailProduct from "../pages/chi-tiet-san-pham";
 import Tintuc from "./tintuc/Tintuc.jsx";
+import Payment from "./payment/Payment.jsx";
 export default {
   Service,
   Home,
@@ -25,4 +26,5 @@ export default {
   GioiThieu,
   DetailProduct,
   Tintuc,
+  Payment,
 };

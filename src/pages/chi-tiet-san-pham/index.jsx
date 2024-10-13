@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useLocation, useParams } from "react-router-dom/dist";
 import BreadCum from "../../components/bread-cum/BreadCum";
 import { useState } from "react";
@@ -11,6 +12,12 @@ import { useProduct, useProductId } from "../../useQuery/useProducts";
 import { CommonLoadingModal } from "../../components/model/LoadingModel";
 import { useCategory } from "../../useQuery/useCategory";
 import Lienhe from "../../components/lien-he-chung/Lienhe";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  handleAddToCart,
+  handleRemoveFromCart,
+  increment,
+} from "../../feature/homeSlice";
 const breadcrumbItems = [
   {
     title: "Trang chủ",
@@ -30,9 +37,15 @@ const breadcrumbItems = [
   },
 ];
 const DetailProduct = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
+  const cartItems = useSelector((state) => state.home.cartItems);
+  console.log(
+    "home state",
+    useSelector((state) => state.home)
+  );
   const params = useParams();
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
   const { data, isLoading } = useProductId(params.id);
   const { data: dataCategory, isLoading: isisLoadingCategory } = useCategory();
   const { data: dataListproduct, isLoading: isLoadingListproduct } = useProduct(
@@ -118,26 +131,38 @@ const DetailProduct = () => {
                 <div className="flex h-[50px] border border-[#093] ">
                   <div
                     onClick={() => {
-                      if (+quantity > 1) setQuantity(+quantity + -1);
+                      dispatch(
+                        handleRemoveFromCart({
+                          ...data,
+                        })
+                      );
                     }}
                     className="w-10 leading-[50px] text-center cursor-pointer"
                   >
                     -
                   </div>
                   <input
-                    value={quantity}
+                    value={
+                      cartItems?.find((cart) => cart._id === data?._id)
+                        ?.quantity || 0
+                    }
                     onChange={(e) => {
-                      const value = e.target.value;
-
-                      if (/^\d*$/.test(value)) {
-                        setQuantity(value);
-                      }
+                      // const value = e.target.value;
+                      // if (/^\d*$/.test(value)) {
+                      //   setQuantity(value);
+                      // }
                     }}
                     maxLength={4}
                     className="w-[60px] focus:outline-none border-none text-center"
                   />
                   <div
-                    onClick={() => setQuantity(+quantity + 1)}
+                    onClick={() => {
+                      dispatch(
+                        handleAddToCart({
+                          ...data,
+                        })
+                      );
+                    }}
                     className="w-10 leading-[50px] text-center cursor-pointer"
                   >
                     +

@@ -8,6 +8,7 @@ const initialState = {
   message: "",
   type: "",
   dataProfile: {},
+  name: "132",
 };
 export const fetchUserById = createAsyncThunk(
   "users/fetchByIdStatus",

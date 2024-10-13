@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useCategory } from "../useQuery/useUser";
 import slugify from "slugify";
+import BadgeCmp from "../components/badge/BadgeCmp";
 const removeAccents = (str) => {
   return str
     .normalize("NFD")
@@ -146,6 +147,11 @@ const MainHeader = ({ onclick }) => {
                     <FaPhoneAlt className="" />
                     {data?.phone}
                   </a>
+                </div>
+              </div>
+              <div className="phone">
+                <div className="text">
+                  <BadgeCmp />
                 </div>
               </div>
             </div>

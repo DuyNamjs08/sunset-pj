@@ -1,10 +1,10 @@
 // eslint-disable-next-line react/prop-types
-const Button = ({ text, className, disable, onclick }) => {
+const Button = ({ text, type = "button", className, disable, onclick }) => {
   return (
     <>
       <button
         onClick={onclick}
-        type="button"
+        type={type}
         disabled={disable}
         className={`text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-2.5 py-[8px] me-2  ${className} ${
           disable ? "disabled:opacity-25" : ""

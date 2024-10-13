@@ -161,4 +161,10 @@ export const RouterWeb = [
     role: ["1", "2", "3"],
     component: <Pages.Tintuc />,
   },
+  {
+    id: 13,
+    path: "don-hang",
+    role: ["1", "2", "3"],
+    component: <Pages.Payment />,
+  },
 ];
