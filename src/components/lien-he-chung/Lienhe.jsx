@@ -1,9 +1,40 @@
 import { FaFacebook, FaFacebookMessenger } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { useMails } from "../../useQuery/useMails";
+import { Form, Input, Button } from "antd";
+import { showMessageError, showMessageSuccesss } from "../../feature/homeSlice";
+import { useEffect, useState } from "react";
+import { CommonLoadingModal } from "../model/LoadingModel";
 
 const Lienhe = () => {
   const data = useSelector((state) => state.home.dataProfile);
+  const dispatch = useDispatch();
+  const { mutate, status } = useMails();
+  const [form] = Form.useForm();
+  const [isLoading, setIsLoading] = useState(false);
+  const onFinish = (values) => {
+    console.log("Received values:", values);
+    mutate(
+      { ...values, subject: "Hỏi về sản phẩm" },
+      {
+        onSuccess: () => {
+          dispatch(showMessageSuccesss("Tạo thành công!"));
+        },
+        onError: () => {
+          dispatch(showMessageError("Tạo thất bại!"));
+        },
+      }
+    );
+    form.resetFields();
+  };
+  useEffect(() => {
+    if (status === "pending") {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
+  }, [status]);
   return (
     <ContactStyle>
       <div className="max-w-screen-xl mx-auto">
@@ -79,51 +110,61 @@ const Lienhe = () => {
               <span className="title__slogan">GỬI TIN NHẮN</span>
               <p className="title__heading">Yêu Cầu Khảo Sát Trực Tiếp</p>
             </div>
-            <form>
-              <div className="mb-5">
-                <input
-                  type="text"
-                  className=" shadow-sm w-[80%] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
-                  placeholder="Họ và tên"
-                  required
-                />
-              </div>
-              <div className="mb-5">
-                <input
-                  type="email"
-                  className="shadow-sm  w-[80%] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
-                  placeholder="Địa chỉ email"
-                  required
-                />
-              </div>
-              <div className="mb-5">
-                <input
-                  type="text"
-                  placeholder="Số điện thoại"
-                  className="shadow-sm  w-[80%] bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg"
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <textarea
-                  id="message"
-                  rows={4}
-                  className=" w-[80%] block p-2.5  text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300"
-                  placeholder="Leave a comment..."
-                  defaultValue={""}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="text-white bg-blue-800 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            <Form onFinish={onFinish} layout="vertical">
+              <Form.Item
+                name="name"
+                label="Họ và tên"
+                rules={[
+                  { required: true, message: "Please input your full name!" },
+                ]}
               >
-                Gửi đi
-              </button>
-            </form>
+                <Input placeholder="Họ và tên" />
+              </Form.Item>
+
+              <Form.Item
+                name="email"
+                label="Địa chỉ email"
+                rules={[
+                  { required: true, message: "Please input your email!" },
+                  { type: "email", message: "Please enter a valid email!" },
+                ]}
+              >
+                <Input placeholder="Địa chỉ email" />
+              </Form.Item>
+
+              <Form.Item
+                name="phone"
+                label="Số điện thoại"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your phone number!",
+                  },
+                ]}
+              >
+                <Input placeholder="Số điện thoại" />
+              </Form.Item>
+
+              <Form.Item
+                name="message"
+                label="Leave a comment"
+                rules={[
+                  { required: true, message: "Please input your message!" },
+                ]}
+              >
+                <Input.TextArea rows={4} placeholder="Leave a comment..." />
+              </Form.Item>
+
+              <Form.Item>
+                <Button type="primary" htmlType="submit" className="w-full">
+                  Gửi đi
+                </Button>
+              </Form.Item>
+            </Form>
           </div>
         </div>
       </div>
+      <CommonLoadingModal isLoadingModalOpen={isLoading} />
     </ContactStyle>
   );
 };
