@@ -3,10 +3,12 @@ import gradientImage from "../../assets/single_img.jpg";
 import gradientImage1 from "../../assets/gradient-1.png";
 import { Form, Input, Select } from "antd";
 import logo from "../../assets/hải đăng.png";
+import { useSelector } from "react-redux";
 
 const { Option } = Select;
 
 const Advance = () => {
+  const data = useSelector((state) => state.home.dataProfile);
   return (
     <AdvanceStyle>
       <section className="site-advisory">
@@ -146,7 +148,7 @@ const Advance = () => {
                     alt="logo"
                   />
                 </a>{" "}
-                <a href="tel:094 6868 498">094 6868 498</a>
+                <a href={`tel:${data?.phone}`}> {data?.phone}</a>
               </div>
             </div>
           </div>
