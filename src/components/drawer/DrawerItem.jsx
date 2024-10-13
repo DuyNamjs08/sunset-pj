@@ -29,10 +29,13 @@ const DrawerItem = ({
         {children}
       </Link>
       {icon ? (
-        <div className="min-w-10">{icon}</div>
+        <div className=" border-l-2  border-[#ccc] p-[8px]">{icon}</div>
       ) : (
         showIcon && (
-          <div className="w-10 " onClick={onClickShowChildren}>
+          <div
+            className=" border-l-2  border-[#ccc] p-[8px] "
+            onClick={onClickShowChildren}
+          >
             <IconRight />
           </div>
         )
