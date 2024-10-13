@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-
+import HTMLReactParser from "html-react-parser";
 import { FaChevronRight } from "react-icons/fa";
 
 /* eslint-disable react/prop-types */
@@ -23,7 +23,9 @@ const Card1 = ({
             {title}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-400">{des}</p>
+        {/* <p className="mb-3 font-normal text-gray-400">
+          {des ? HTMLReactParser(des.substring(0, 40)) + " ..." : ""}
+        </p> */}
         {isBtn ? (
           <a
             href="#"

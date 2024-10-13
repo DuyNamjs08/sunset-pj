@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Pagination } from "antd";
 
 import { useState } from "react";
@@ -5,6 +6,8 @@ import { useState } from "react";
 import LayoutProduct from "../../layout/layoutProduct/LayoutProduct";
 import ProductItem from "../../components/productItem/ProductItem";
 import "./style.css";
+import { useProduct } from "../../useQuery/useProducts";
+import { usePaginate } from "../../hooks/usePaginate";
 
 const breadcrumbItems = [
   {
@@ -21,10 +24,23 @@ const breadcrumbItems = [
   },
 ];
 const ListProduct = (ListProduct) => {
-  const [page, setPage] = useState(1);
-  console.log("page", page);
-
   const { type } = ListProduct;
+  const {
+    offset,
+    page,
+    handleChange,
+    limit,
+    setOffset,
+    setPage,
+    setSearchParams,
+    searchParams,
+  } = usePaginate();
+  const { data, isLoading, refetch, totalPage } = useProduct({
+    limit,
+    offset,
+    category_id: searchParams.get("category_id") ?? "",
+  });
+  console.log(data);
   return (
     <LayoutProduct breadcrumbData={breadcrumbItems}>
       <div>
@@ -55,10 +71,11 @@ const ListProduct = (ListProduct) => {
           Inverter năng lượng mặt trời
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6">
-          <ProductItem key={1} />
-          <ProductItem key={2} />
-          <ProductItem key={3} />
-          <ProductItem key={4} />
+          {data?.data &&
+            data?.data?.length > 0 &&
+            data?.data?.map((item) => (
+              <ProductItem key={item._id} data={item} />
+            ))}
         </div>
         <div className="mb-[30px] bg-[#fafafa] pl-[38px] pr-[19px] my-2 flex justify-center  items-center h-[50px]">
           <Pagination

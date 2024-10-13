@@ -84,8 +84,9 @@ const fetchDataId = async (id) => {
 };
 export const usePostsId = (query) => {
   const { data, isLoading, error, status, refetch } = useQuery({
-    queryKey: ["Postsid"],
+    queryKey: query,
     queryFn: () => fetchDataId(query),
+    enabled: !!query,
   });
   return { data, isLoading, error, status, refetch };
 };

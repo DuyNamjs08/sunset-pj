@@ -8,7 +8,7 @@ const SAN_PHAM = "/san-pham";
 const DU_AN = "/du-an";
 const CAU_HOI_THUONG_GAP =
   "/nhung-cau-hoi-thuong-gap-ve-he-thong-dien-nang-luong-mat-troi/";
-const TIN_TUC = "/tin-tuc-dien-mat-troi";
+// const TIN_TUC = "/tin-tuc-dien-mat-troi";
 const LIEN_HE = "/lien-he/";
 const DAT_LICH_KHAO_SAT = "/dat-lich-khao-sat/";
 const DANG_NHAP = "/dang-nhap";
@@ -83,7 +83,7 @@ export const RouterWeb = [
     child: [
       {
         path: "dich-vu-lap-dat-he-thong-dien-nang-luong-mat-troi-tron-goi/", // Đường dẫn tương đối
-        component: <Pages.Service />,
+        component: <Pages.Tintuc />,
       },
       {
         path: "dich-vu-van-hanh-va-bao-tri-he-thong-dien-mat-troi-tron-goi/", // Đường dẫn tương đối
@@ -109,7 +109,7 @@ export const RouterWeb = [
   },
   {
     id: 7,
-    path: TIN_TUC,
+    path: "/",
     role: ["1", "2", "3"],
     component: (
       <div>
@@ -119,15 +119,15 @@ export const RouterWeb = [
     child: [
       {
         path: "tin-tuc-dien-mat-troi/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Pages.Tintuc />,
       },
       {
         path: "chuyen-muc-xe-dien/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Pages.Tintuc />,
       },
       {
         path: "kien-thuc-huu-ich/", // Đường dẫn tương đối
-        component: <></>,
+        component: <Pages.Tintuc />,
       },
     ],
   },
@@ -154,5 +154,11 @@ export const RouterWeb = [
     path: DANG_KI,
     role: ["1", "2", "3"],
     component: <Pages.Register />,
+  },
+  {
+    id: 12,
+    path: "dich-vu",
+    role: ["1", "2", "3"],
+    component: <Pages.Tintuc />,
   },
 ];

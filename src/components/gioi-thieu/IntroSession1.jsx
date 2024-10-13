@@ -3,7 +3,9 @@ import bg from "../../assets/bg_01.png";
 import Button1 from "../button/Button1";
 import { FaPlay } from "react-icons/fa";
 import img from "../../assets/gioi-thieu01.png";
+import { useSelector } from "react-redux";
 const IntroSession1 = () => {
+  const data = useSelector((state) => state.home.dataProfile);
   return (
     <IntroSession1Style bg={bg}>
       <section className="site-about">
@@ -70,14 +72,19 @@ const IntroSession1 = () => {
                     :
                   </p>
                   <p>
-                    Địa chỉ: 168/1 Hào Nam, P. Ô Chợ Dừa, Q. Đống Đa, Hà Nội
+                    Địa chỉ:
+                    {` ${data?.address || ""}` +
+                      ` - ${data?.sub_address || ""}`}
                   </p>
-                  <p>Số điện thoại: 0946868498 – 0943968848 – 0826889489</p>
                   <p>
-                    Email: dienmattroi@gmail.com / vietanh@gmail.com /
-                    ngocnam@gmail.com
+                    Số điện thoại:
+                    {` ${data?.phone || ""}` + ` - ${data?.sub_phone || ""}`}
                   </p>
-                  <p>Mã số thuế: 0105994863 cấp ngày 21/09/2012 tại Hà Nội.</p>
+                  <p>
+                    Email:{" "}
+                    {` ${data?.mail || ""}` + ` - ${data?.sub_mail || ""}`}
+                  </p>
+                  <p>Mã số thuế: {` ${data?.tax_code || ""}`}</p>
                 </div>
                 <Button1 className="border-blue" label="Xem thêm" />
               </div>

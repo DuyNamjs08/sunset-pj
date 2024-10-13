@@ -5,14 +5,25 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
-import { headerLinks } from "../constant/header";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaCartShopping } from "react-icons/fa6";
-import logo from "../assets/hải đăng.png";
+// import logo from "../assets/hải đăng.png";
 import { useEffect, useState } from "react";
-
+// import logo from "../assets/hải đăng.png";
+import { useSelector } from "react-redux";
+import { useCategory } from "../useQuery/useUser";
+import slugify from "slugify";
+const removeAccents = (str) => {
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D");
+};
 const MainHeader = ({ onclick }) => {
+  const data = useSelector((state) => state.home.dataProfile);
+  const { data: dataCategory } = useCategory();
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
@@ -30,6 +41,61 @@ const MainHeader = ({ onclick }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const headerLinks = [
+    { text: "Trang chủ", url: "/" },
+    { text: "Giới thiệu", url: "/cong-ty-dien-mat-troi-uy-tin/" },
+    {
+      text: "Sản phẩm",
+      url: "/san-pham/",
+      subMenu:
+        dataCategory?.data && dataCategory?.data?.length > 0
+          ? dataCategory?.data?.map((item) => {
+              return {
+                text: item.name,
+                url: `/${slugify(removeAccents(item.name), {
+                  lower: true,
+                  replacement: "-",
+                  remove: /[*+~.()'"!:@]/g,
+                })}?category_id=${item._id}`,
+              };
+            })
+          : [],
+    },
+    {
+      text: "Dịch vụ",
+      url: "/dich-vu",
+      subMenu: [
+        {
+          text: "Dịch vụ lắp đặt hệ thống điện mặt trời trọn gói",
+          url: "/dich-vu-lap-dat-he-thong-dien-nang-luong-mat-troi-tron-goi/",
+        },
+        {
+          text: "Dịch vụ vận hành và bảo trì hệ thống điện mặt trời trọn gói",
+          url: "/dich-vu-van-hanh-va-bao-tri-he-thong-dien-mat-troi-tron-goi/",
+        },
+        {
+          text: "Dịch vụ vệ sinh tấm pin năng lượng mặt trời trọn gói",
+          url: "/dich-vu-ve-sinh-tam-pin-nang-luong-mat-troi-tron-goi/",
+        },
+      ],
+    },
+    { text: "Dự án đã làm", url: "/du-an" },
+    {
+      text: "Câu hỏi thường gặp",
+      url: "/nhung-cau-hoi-thuong-gap-ve-he-thong-dien-nang-luong-mat-troi/",
+    },
+    {
+      text: "Tin tức",
+      url: "/tin-tuc-dien-mat-troi/",
+      subMenu: [
+        { text: "Tin tức Điện mặt trời", url: "/tin-tuc-dien-mat-troi/" },
+        { text: "Chuyên Mục Xe Điện", url: "/chuyen-muc-xe-dien/" },
+        { text: "Kiến thức hữu ích", url: "/kien-thuc-huu-ich/" },
+      ],
+    },
+    { text: "Liên hệ", url: "/lien-he/" },
+    { text: "Đặt lịch khảo sát", url: "/dat-lich-khao-sat/" },
+  ];
   return (
     <section
       className={`header ${
@@ -51,8 +117,8 @@ const MainHeader = ({ onclick }) => {
                 title="Điện năng lượng mặt trời, điện mặt trời, sunemit"
               >
                 <img
-                  className=" w-[80px] h-[60px] mb-4 md:mb-0 md:w-[230px]"
-                  src={logo}
+                  className=" w-[100px] mb-4 md:mb-0 md:w-[230px]"
+                  src={data?.image}
                   alt="logo"
                   title="logo"
                 />
@@ -67,24 +133,18 @@ const MainHeader = ({ onclick }) => {
               <div className="address">
                 <span className="flex items-center gap-2">
                   <FaMapMarkerAlt className="text-[30px] text-[#093]" />
-                  168/1 Hào Nam, P. Ô Chợ Dừa,
-                  <br /> Q. Đống Đa, Hà Nội
+                  {data?.address}
                 </span>
               </div>
               <div className="phone">
                 <div className="text">
                   <a
                     className="flex items-center gap-2 text-[28px] text-[#abd660]"
-                    href="tel:094 6868 498"
+                    href={`tel:${data?.phone}`}
                     title="phone"
                   >
                     <FaPhoneAlt className="" />
-                    <div>
-                      <div className=" leading-6 ">094 6868 498</div>
-                      <span className="block text-[14px] text-[#000]">
-                        Hotline
-                      </span>
-                    </div>
+                    {data?.phone}
                   </a>
                 </div>
               </div>

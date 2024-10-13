@@ -10,9 +10,21 @@ import PartnerSlider from "../../components/slide/Slide2";
 import SessionHilight from "../../components/hightLight/SessionHilight";
 import Advance from "../../components/loi-khuyen/Advance";
 import { useNavigate } from "react-router-dom";
+import { useInformation } from "../../useQuery/useInformation";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { saveDataProfile } from "../../feature/homeSlice";
+import { CommonLoadingModal } from "../../components/model/LoadingModel";
 
 const Home = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { data, isLoading: isloadingProfile } = useInformation();
+  useEffect(() => {
+    if (data) {
+      dispatch(saveDataProfile(data?.[0]));
+    }
+  }, [data]);
   return (
     <div>
       <Banner />
@@ -20,8 +32,8 @@ const Home = () => {
         <div className="container mx-auto">
           <div className="flex items-center gap-[30px]">
             <h2>
-              SUNEMIT cung cấp Giải pháp Điện mặt trời hoàn hảo cho mọi công
-              trình
+              Hải Đăng Solar Energy cung cấp Giải pháp Điện mặt trời hoàn hảo
+              cho mọi công trình
             </h2>
             <Button1
               className={"btn-contact"}
@@ -39,6 +51,7 @@ const Home = () => {
       <PartnerSlider />
       <SessionHilight />
       <Advance />
+      <CommonLoadingModal isLoadingModalOpen={isloadingProfile} />
     </div>
   );
 };

@@ -1,12 +1,20 @@
 import styled from "styled-components";
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import logo from "../../assets/hải đăng.png";
+import {
+  FaFacebook,
+  FaInstagram,
+  // FaTwitter,
+  FaYoutube,
+  FaFacebookMessenger,
+} from "react-icons/fa";
+// import logo from "../../assets/hải đăng.png";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const data = useSelector((state) => state.home.dataProfile);
   const footerData = {
     logo: {
       href: "https://Hải Đăng Solar Energy.com",
-      src: logo,
+      src: data?.image || "",
       title: "logo",
       alt: "logo",
     },
@@ -58,19 +66,19 @@ const Footer = () => {
     ],
     contact: [
       {
-        text: "168/1 Hào Nam, P. Ô Chợ Dừa, Q. Đống Đa, Hà Nội",
+        text: data?.address || "",
         href: "javascript:void()",
       },
       {
-        text: "Email: dienmattroi@Hải Đăng Solar Energy.com",
-        href: "mailto:dienmattroi@Hải Đăng Solar Energy.com",
+        text: `${data?.mail || ""} - ${data?.sub_mail || ""}`,
+        href: `mailto:${data?.mail || ""}`,
       },
       {
-        text: "Hotline: 094 396 8848 - 094 6868 498",
-        href: "tel:0943968848",
+        text: `Hotline:${data?.phone || ""} - ${data?.sub_phone || ""}`,
+        href: `tel:${data?.phone || ""}`,
       },
       {
-        text: "Mã số ĐKKD: 0105994863",
+        text: `Mã số thuế: ${data?.tax_code || ""}`,
         href: "javascript:void()",
       },
     ],
@@ -162,19 +170,13 @@ const Footer = () => {
                 <div className="mxh">
                   <ul>
                     <li>
-                      <a
-                        href="https://www.facebook.com/Hải Đăng Solar Energy/"
-                        title="mxh"
-                      >
+                      <a href={data?.facebook} title="mxh">
                         <FaFacebook aria-hidden="true" />
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="https://www.instagram.com/dienmattroiHải Đăng Solar Energy/"
-                        title="mxh"
-                      >
-                        <FaInstagram aria-hidden="true" />
+                      <a href={data?.message} title="mxh">
+                        <FaFacebookMessenger aria-hidden="true" />
                       </a>
                     </li>
                     <li>
@@ -182,7 +184,7 @@ const Footer = () => {
                         href="https://twitter.com/iHải Đăng Solar Energy"
                         title="mxh"
                       >
-                        <FaTwitter aria-hidden="true" />
+                        <FaInstagram aria-hidden="true" />
                       </a>
                     </li>
                     <li>

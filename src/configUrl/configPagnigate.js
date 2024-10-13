@@ -1,3 +1,3 @@
 export const defaultLimit = {
-  limit: 25,
+  limit: 5,
 };

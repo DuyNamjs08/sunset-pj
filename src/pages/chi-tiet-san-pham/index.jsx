@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom/dist";
+import { useLocation, useParams } from "react-router-dom/dist";
 import BreadCum from "../../components/bread-cum/BreadCum";
 import { useState } from "react";
 
@@ -7,29 +7,37 @@ import Slider from "react-slick";
 
 import SliderProduct from "./Slider";
 import ProductItem from "../../components/productItem/ProductItem";
+import { useProduct, useProductId } from "../../useQuery/useProducts";
+import { CommonLoadingModal } from "../../components/model/LoadingModel";
+import { useCategory } from "../../useQuery/useCategory";
+import Lienhe from "../../components/lien-he-chung/Lienhe";
+const breadcrumbItems = [
+  {
+    title: "Trang chủ",
+    path: "/",
+  },
+  {
+    title: "Sản phẩm Điện Năng Lượng Mặt Trời",
+    path: "/san-pham/",
+  },
+  {
+    title: "Tấm pin năng lượng mặt trời ",
+    path: "/san-pham",
+  },
+  {
+    title: "Sản phẩm Điện Năng Lượng Mặt Trời",
+    path: "/san-pham",
+  },
+];
 const DetailProduct = () => {
-  const a = useParams();
-  console.log(a);
+  const location = useLocation();
+  const params = useParams();
   const [quantity, setQuantity] = useState(1);
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const breadcrumbItems = [
-    {
-      title: "Trang chủ",
-      path: "/",
-    },
-    {
-      title: "Sản phẩm Điện Năng Lượng Mặt Trời",
-      path: "/san-pham/",
-    },
-    {
-      title: "Tấm pin năng lượng mặt trời ",
-      path: "/san-pham",
-    },
-    {
-      title: "Sản phẩm Điện Năng Lượng Mặt Trời",
-      path: "/san-pham",
-    },
-  ];
+  const { data, isLoading } = useProductId(params.id);
+  const { data: dataCategory, isLoading: isisLoadingCategory } = useCategory();
+  const { data: dataListproduct, isLoading: isLoadingListproduct } = useProduct(
+    location.search.split("=")[1]
+  );
   const settings = {
     dots: true,
     infinite: true,
@@ -42,13 +50,13 @@ const DetailProduct = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 1,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
         },
       },
       {
@@ -66,68 +74,43 @@ const DetailProduct = () => {
         <div className="my-[30px] ">
           <div className="md:flex   gap-[30px]">
             <div className="md:w-[40%]">
-              <SliderProduct />
+              <SliderProduct
+                data={
+                  typeof data?.image.split(",") === "string"
+                    ? [
+                        {
+                          image: data?.image.split(","),
+                        },
+                      ]
+                    : data?.image.split(",")?.map((item) => {
+                        return {
+                          image: item,
+                        };
+                      })
+                }
+              />
             </div>
             <div className="md:w-[60%]">
               <h2 className="text-[30px] mb-3 text-[#2b3152] font-bold ">
-                Inverter năng lượng mặt trời hòa lưới 3 pha SMA STP-25000 xuất
-                xứ Đức
+                {data?.productName}
               </h2>
               <p className="mb-4 text-[24px] text-[#093] leading-6 ">
                 <span className="">
                   <bdi>
-                    80.500.000
+                    {data?.price}
                     <span className="">₫</span>
                   </bdi>
                 </span>
-                <span className=" ml-2 text-[18px] ">
+                {/* <span className=" ml-2 text-[18px] ">
                   <del>
                     3.630.000
                     <span className="">₫</span>
                   </del>
-                </span>
+                </span> */}
               </p>
               <div className="mb-[15px] desc-detail-product">
                 <div className="">
-                  <p>
-                    Tấm Pin Năng lượng Mặt Trời SU-03 Ntype 580W là Thế hệ tấm
-                    pin hiệu suất cao tiếp theo được cung cấp bởi SUNEMIT với
-                    hiệu suất mạnh mẽ, độ bền tăng ~20% so với các sản phẩm thế
-                    hệ trước cùng loại trên thị trường.
-                  </p>
-                  <p>
-                    <strong>
-                      Ưu điểm của Tấm Pin Mặt Trời SU-03 580W N-type:
-                    </strong>
-                  </p>
-                  <ul>
-                    <li>
-                      Hiệu suất cực cao 22.5% nhờ được sản xuất theo công nghệ
-                      Ntype mới kết hợp với công nghệ 2 mặt kính, cho phép tấm
-                      pin hấp thụ năng lượng ở cả 2 mặt..
-                    </li>
-                    <li>
-                      Kích thước tiêu chuẩn vàng: (2278 x 1134 x 30)mm, giúp
-                      tăng độ chắc chắn, đảm bảo tấm pin được lắp đặt an toàn và
-                      bền vững trên mái công trình.
-                    </li>
-                    <li>
-                      Công nghệ SU-03 sử dụng là Ntype TOPCON Mono Halfcells
-                      100%, cho hiệu quả tốt nhất hiện nay đối với các tấm pin
-                      mặt trời sử dụng tại Việt Nam.
-                    </li>
-                    <li>
-                      Bảo hành vật lý tấm pin tới 15 năm. Bảo hành hiệu suất 30
-                      năm cho kết quả đạt trên 80% so với hiệu suất sử dụng năm
-                      đầu tiên.
-                    </li>
-                    <li>
-                      Thương hiệu tấm Pin SU-03 được phát triển và làm chủ hoàn
-                      toàn bởi SUNEMIT, thương hiệu Việt 100%. Điều này giúp
-                      SUNEMIT chủ động cung cấp cho khách hàng dịch vụ Bảo hành
-                      và Bảo trì sau bán hàng tốt nhất trên thị trường.
-                    </li>
-                  </ul>
+                  <p>{data?.description}</p>
                 </div>
               </div>
               {/* số lượng */}
@@ -170,14 +153,15 @@ const DetailProduct = () => {
                   <li className="leading-[1.5] text-[14px] mb-1 ">
                     <span className="font-bold">Mã sản phẩm:</span> SU-03
                   </li>
-                  <li className="leading-[1.5] text-[14px] mb-1 ">
+                  <li className="leading-[1.5] text-[14px] mb-1 flex ">
                     <span className="font-bold">Danh mục:</span>
-                    <Link
-                      className="ml-1 text-[#777b93] "
-                      to="/tam-pin-nang-luong-mat-troi/"
-                    >
-                      Tấm pin năng lượng mặt trời
-                    </Link>
+                    <div className="ml-1 text-[#777b93] ">
+                      {data && dataCategory
+                        ? dataCategory?.data?.find(
+                            (item) => item._id === data.category_id
+                          )?.name
+                        : ""}
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -198,29 +182,23 @@ const DetailProduct = () => {
               Sản phẩm cùng loại
             </h3>
             <Slider {...settings}>
-              <div className="px-5">
-                <ProductItem />
-              </div>
-              <div className="px-5">
-                <ProductItem />
-              </div>
-              <div className="px-5">
-                <ProductItem />
-              </div>
-              <div className="px-5">
-                <ProductItem />
-              </div>
-
-              <div className="px-5">
-                <ProductItem />
-              </div>
-              <div className="px-5">
-                <ProductItem />
-              </div>
+              {dataListproduct?.data &&
+                dataListproduct?.data?.length > 0 &&
+                dataListproduct?.data?.map((item) => (
+                  <div className="px-5" key={item._id}>
+                    <ProductItem data={item} />
+                  </div>
+                ))}
             </Slider>
           </div>
         </div>
+        <Lienhe />
       </div>
+      <CommonLoadingModal
+        isLoadingModalOpen={
+          isLoading || isLoadingListproduct || isisLoadingCategory
+        }
+      />
     </div>
   );
 };

@@ -1,6 +1,9 @@
+import { FaFacebook, FaFacebookMessenger } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const Lienhe = () => {
+  const data = useSelector((state) => state.home.dataProfile);
   return (
     <ContactStyle>
       <div className="max-w-screen-xl mx-auto">
@@ -16,25 +19,35 @@ const Lienhe = () => {
                   <li>
                     <a href="#">
                       <span>
-                        168/1 Hào Nam, P. Ô Chợ Dừa, Q. Đống Đa, Hà Nội
+                        {` ${data?.address || ""}` +
+                          ` - ${data?.sub_address || ""}`}
                       </span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
                       <span>
-                        Phone: 094 6868 498 - 0826 889 489 - 094 396 8848
+                        Phone:{" "}
+                        {` ${data?.phone || ""}` +
+                          ` - ${data?.sub_phone || ""}`}
                       </span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <span>Hotline 24/7: 0946868498 - 0943968848</span>
+                      <span>
+                        Hotline 24/7:{" "}
+                        {` ${data?.phone || ""}` +
+                          ` - ${data?.sub_phone || ""}`}
+                      </span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <span>Email: dienmattroi@sunemit.com</span>
+                      <span>
+                        Email:{" "}
+                        {` ${data?.mail || ""}` + ` - ${data?.sub_mail || ""}`}
+                      </span>
                     </a>
                   </li>
                 </ul>
@@ -42,13 +55,13 @@ const Lienhe = () => {
               <div className="mxh">
                 <ul>
                   <li>
-                    <a href="https://www.facebook.com/sunemit">
-                      <span>Facebook</span>
+                    <a href={data?.facebook} title="mxh">
+                      <FaFacebook aria-hidden="true" />
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/Isunemit">
-                      <span> Twitter</span>
+                    <a href={data?.message} title="mxh">
+                      <FaFacebookMessenger aria-hidden="true" />
                     </a>
                   </li>
                   <li>

@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom/dist";
+/* eslint-disable no-unused-vars */
+import { Link } from "react-router-dom";
 import "./style.css";
+import { addDot } from "../../helpers/changeNumber";
 
-const ProductItem = (ProductItem) => {
-  const urlDispatch = `/san-pham/inverter-hoa-luoi-1-pha-deye-sun-3-6-6k-g/`;
+const ProductItem = (data) => {
+  const urlDispatch = `/san-pham/${data?.data?._id}?category_id=${data?.data?.category_id}`;
   return (
     <div className="item-products">
       <div className="">
@@ -14,7 +16,7 @@ const ProductItem = (ProductItem) => {
             >
               <img
                 className=" w-full sm:w-100 d-block"
-                src="https://sunemit.com/wp-content/uploads/2024/06/inverter-hoa-luoi-1-pha-deye-sun-3.6-6k-g4-270x250.jpg"
+                src={data?.data?.image?.split(",")?.[0]}
                 alt="Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G"
               />
             </Link>
@@ -27,13 +29,13 @@ const ProductItem = (ProductItem) => {
                 to={urlDispatch}
                 title="Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G"
               >
-                Inverter hòa lưới 1 pha DEYE 3,6-6KW | SUN-3,6/4/4,6/5/6K-G
+                {data?.data?.productName}
               </Link>
             </h3>
             <span className="price">
               {/* <span className="amount">Liên hệ</span> */}
               <span className="flex gap-2">
-                <del aria-hidden="true">
+                {/* <del aria-hidden="true">
                   <span className="woocommerce-Price-amount amount">
                     <bdi>
                       3.630.000
@@ -42,12 +44,12 @@ const ProductItem = (ProductItem) => {
                       </span>
                     </bdi>
                   </span>
-                </del>
+                </del> */}
 
                 <ins aria-hidden="true">
                   <span className="woocommerce-Price-amount amount">
                     <bdi>
-                      3.120.000
+                      {addDot(data?.data?.price)}
                       <span className="woocommerce-Price-currencySymbol">
                         ₫
                       </span>
