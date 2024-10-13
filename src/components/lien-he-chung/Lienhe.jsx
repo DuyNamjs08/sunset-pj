@@ -16,7 +16,7 @@ const Lienhe = () => {
   const onFinish = (values) => {
     console.log("Received values:", values);
     mutate(
-      { ...values, subject: "Hỏi về sản phẩm" },
+      { ...values, subject: "Hỏi về sản phẩm", type: "123" },
       {
         onSuccess: () => {
           dispatch(showMessageSuccesss("Tạo thành công!"));

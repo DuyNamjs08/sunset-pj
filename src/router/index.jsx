@@ -54,7 +54,7 @@ export const RouterWeb = [
         component: <Category type="1" />,
       },
       {
-        path: "inverter-hoa-luoi-dien-mat-troi/", // Đường dẫn tương đối
+        path: "inverter-hoa-luoi/", // Đường dẫn tương đối
         component: <Category type="1" />,
       },
       {
@@ -62,7 +62,7 @@ export const RouterWeb = [
         component: <Category type="1" />,
       },
       {
-        path: "vat-tu-phu-kien-dien-mat-troi/", // Đường dẫn tương đối
+        path: "phu-kien-dien-mat-troi/", // Đường dẫn tương đối
         component: <Category type="1" />,
       },
       {
