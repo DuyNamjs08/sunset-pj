@@ -1,10 +1,12 @@
 import { useState } from "react";
 import ProductViewed from "../../pages/category/components/ProductViewed/ProductViewed";
 import SellingProducts from "../SellingProducts/SellingProducts";
+import { useSelector } from "react-redux";
 
 const KhoiPhai = () => {
   const [valueSearch, setValueSearch] = useState("");
   const handleSearch = () => {};
+  const data = useSelector((state) => state.home.dataProductView);
   return (
     <>
       <div className=" bg-[#fafcff] pl-3 mb-10 flex justify-between border border-[#eff2f7]  h-[40px]">
@@ -29,8 +31,12 @@ const KhoiPhai = () => {
           </svg>
         </button>
       </div>
-      <ProductViewed />
-      <SellingProducts />
+      {data?.length > 0 && (
+        <>
+          <ProductViewed />
+          <SellingProducts />
+        </>
+      )}
     </>
   );
 };

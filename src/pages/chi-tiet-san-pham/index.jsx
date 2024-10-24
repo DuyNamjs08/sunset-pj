@@ -49,8 +49,14 @@ const DetailProduct = () => {
   const { data, isLoading } = useProductId(params.id);
   const { data: dataCategory, isLoading: isisLoadingCategory } = useCategory();
   const { data: dataListproduct, isLoading: isLoadingListproduct } = useProduct(
-    location.search.split("=")[1]
+    {
+      offset: 0,
+      limit: 20,
+      productName: "",
+      category_id: location.search.split("=")[1],
+    }
   );
+  console.log(dataListproduct);
   const settings = {
     dots: true,
     infinite: true,
@@ -111,7 +117,7 @@ const DetailProduct = () => {
                 <span className="">
                   <bdi>
                     {data?.price}
-                    <span className="">₫</span>
+                    {Number(data?.price) ? "đ" : ""}
                   </bdi>
                 </span>
                 {/* <span className=" ml-2 text-[18px] ">
@@ -221,7 +227,7 @@ const DetailProduct = () => {
       </div>
       <CommonLoadingModal
         isLoadingModalOpen={
-          isLoading || isLoadingListproduct || isisLoadingCategory
+          isLoading || isisLoadingCategory || isLoadingListproduct
         }
       />
     </div>

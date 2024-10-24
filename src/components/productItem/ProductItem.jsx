@@ -49,9 +49,11 @@ const ProductItem = (data) => {
                 <ins aria-hidden="true">
                   <span className="woocommerce-Price-amount amount">
                     <bdi>
-                      {addDot(data?.data?.price)}
+                      {Number(data?.data?.price)
+                        ? addDot(data?.data?.price)
+                        : data?.data?.price}
                       <span className="woocommerce-Price-currencySymbol">
-                        ₫
+                        {Number(data?.data?.price) ? "đ" : ""}
                       </span>
                     </bdi>
                   </span>

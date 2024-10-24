@@ -13,15 +13,15 @@ import { useEffect, useState } from "react";
 // import logo from "../assets/hải đăng.png";
 import { useSelector } from "react-redux";
 import { useCategory } from "../useQuery/useUser";
-import slugify from "slugify";
+// import slugify from "slugify";
 import BadgeCmp from "../components/badge/BadgeCmp";
-const removeAccents = (str) => {
-  return str
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/đ/g, "d")
-    .replace(/Đ/g, "D");
-};
+// const removeAccents = (str) => {
+//   return str
+//     .normalize("NFD")
+//     .replace(/[\u0300-\u036f]/g, "")
+//     .replace(/đ/g, "d")
+//     .replace(/Đ/g, "D");
+// };
 const MainHeader = ({ onclick }) => {
   const data = useSelector((state) => state.home.dataProfile);
   const { data: dataCategory } = useCategory();
@@ -51,13 +51,17 @@ const MainHeader = ({ onclick }) => {
       subMenu:
         dataCategory?.data && dataCategory?.data?.length > 0
           ? dataCategory?.data?.map((item) => {
+              // return {
+              //   text: item.name,
+              //   url: `/${slugify(removeAccents(item.name), {
+              //     lower: true,
+              //     replacement: "-",
+              //     remove: /[*+~.()'"!:@]/g,
+              //   })}?category_id=${item._id}`,
+              // };
               return {
                 text: item.name,
-                url: `/${slugify(removeAccents(item.name), {
-                  lower: true,
-                  replacement: "-",
-                  remove: /[*+~.()'"!:@]/g,
-                })}?category_id=${item._id}`,
+                url: `/san-pham?category_id=${item._id}`,
               };
             })
           : [],

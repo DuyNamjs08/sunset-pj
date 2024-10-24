@@ -8,7 +8,7 @@ const initialState = {
   message: "",
   type: "",
   dataProfile: {},
-  name: "132",
+  dataProductView: [],
 };
 export const fetchUserById = createAsyncThunk(
   "users/fetchByIdStatus",
@@ -63,6 +63,9 @@ export const counterSlice = createSlice({
       const { _id } = action.payload;
       state.cartItems = state.cartItems.filter((cart) => cart._id !== _id);
     },
+    handleProductView: (state, action) => {
+      state.dataProductView = action.payload;
+    },
     saveDataProfile: (state, action) => {
       state.dataProfile = action.payload;
     },
@@ -99,6 +102,7 @@ export const {
   showMessageError,
   resetMessage,
   saveDataProfile,
+  handleProductView,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
