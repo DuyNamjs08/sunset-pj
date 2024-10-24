@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
 import { useEffect, useState } from "react";
@@ -8,7 +9,7 @@ import "./style.css";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import styled from "styled-components";
 
-const BannerDiDong = (props) => {
+const BannerDiDong = ({ data = [] }) => {
   //   const [banners, setBanners] = useState([]);
 
   const settings = {
@@ -42,41 +43,14 @@ const BannerDiDong = (props) => {
       },
     ],
   };
-  const banners = [
-    {
-      id: 1,
-      link: "https://sunemit.com/wp-content/uploads/2021/10/He-thong-dien-mat-troi-hoa-luoi-1.png",
-      image:
-        "https://sunemit.com/wp-content/uploads/2021/10/He-thong-dien-mat-troi-hoa-luoi-1.png",
-    },
-    {
-      id: 2,
-      link: "https://sunemit.com/wp-content/uploads/2021/10/He-thong-dien-mat-troi-hoa-luoi-1.png",
-      image:
-        "https://sunemit.com/wp-content/uploads/2021/10/He-thong-dien-mat-troi-hoa-luoi-1.png",
-    },
-    {
-      id: 3,
-      link: "https://sunemit.com/wp-content/uploads/2021/10/bo-luu-tru-dien-cho-gia-dinh-1.png",
-      image:
-        "https://sunemit.com/wp-content/uploads/2021/10/bo-luu-tru-dien-cho-gia-dinh-1.png",
-    },
-  ];
 
   return (
     <div className="banner-di-dong">
       <Slider {...settings} className="">
-        {banners?.map((item) => (
-          <div key={item.id} className="item relative">
-            <a href={item?.link}>
-              <img
-                src={
-                  item?.image?.startsWith("http://")
-                    ? item.image.replace("http://", "https://")
-                    : item?.image
-                }
-                alt="img"
-              />
+        {data?.map((item, index) => (
+          <div key={index} className="item relative">
+            <a href="#">
+              <img src={item} alt="img" />
             </a>
           </div>
         ))}

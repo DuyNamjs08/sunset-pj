@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import styled from "styled-components";
+import { decodeHtml } from "../../helpers/common";
+import parse from "html-react-parser";
 
 /* eslint-disable react/prop-types */
-const Questions = ({ data }) => {
+const Questions = ({ data = [] }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -11,11 +13,11 @@ const Questions = ({ data }) => {
   return (
     <Style>
       <div className="accordion">
-        {data.map((item, index) => (
+        {data?.map((item, index) => (
           <AccordionItem
             key={index}
-            title={item.title}
-            content={item.content}
+            title={item?.name}
+            content={item?.description}
             isActive={activeIndex === index}
             onClick={() => toggleAccordion(index)}
           />
@@ -43,17 +45,7 @@ const AccordionItem = ({ title, content, isActive, onClick }) => {
             : { maxHeight: "0px" }
         }
       >
-        <p>{content}</p>
-        <p>
-          Hệ thống điện mặt trời mái nhà không thể sản xuất ra điện vào ban đêm.
-        </p>
-        <p>
-          Nếu không muốn sử dụng điện lưới vào thời điểm này, khách hàng có thể
-          nghiên cứu trang bị thêm bộ lưu trữ điện (acquy). Tuy nhiên, chi phí
-          sẽ cao hơn và thời gian hoàn vốn sẽ lâu hơn so với hệ thống nối lưới
-          không có ắc quy lưu trữ. Đó là chưa kể, chi phí thay bộ lưu trữ điện
-          (acquy) khi hết vòng đời sử dụng.
-        </p>
+        <div className="mt-6">{parse(decodeHtml(content))}</div>
       </div>
     </div>
   );

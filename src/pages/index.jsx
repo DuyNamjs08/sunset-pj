@@ -12,6 +12,7 @@ import GioiThieu from "./gioi-thieu/GioiThieu.jsx";
 import DetailProduct from "../pages/chi-tiet-san-pham";
 import Tintuc from "./tintuc/Tintuc.jsx";
 import Payment from "./payment/Payment.jsx";
+import DuAnDetails from "./du-an/DuAnDetails.jsx";
 export default {
   Service,
   Home,
@@ -27,4 +28,5 @@ export default {
   DetailProduct,
   Tintuc,
   Payment,
+  DuAnDetails,
 };

@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { saveDataProfile } from "../../feature/homeSlice";
 import { CommonLoadingModal } from "../../components/model/LoadingModel";
+import { useBanner } from "../../useQuery/useBanner";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,9 +26,10 @@ const Home = () => {
       dispatch(saveDataProfile(data?.[0]));
     }
   }, [data]);
+  const { isLoading, data: dataBanner } = useBanner();
   return (
     <div>
-      <Banner />
+      <Banner data={dataBanner?.[0]?.image?.split(",")} />
       <StyleBanner>
         <div className="container mx-auto">
           <div className="flex items-center gap-[30px]">
@@ -51,7 +53,7 @@ const Home = () => {
       <PartnerSlider />
       <SessionHilight />
       <Advance />
-      <CommonLoadingModal isLoadingModalOpen={isloadingProfile} />
+      <CommonLoadingModal isLoadingModalOpen={isloadingProfile || isLoading} />
     </div>
   );
 };

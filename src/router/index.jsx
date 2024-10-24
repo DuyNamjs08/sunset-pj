@@ -99,7 +99,21 @@ export const RouterWeb = [
     id: 5,
     path: DU_AN,
     role: ["1", "2", "3"],
-    component: <Pages.DuAn />,
+    component: (
+      <div>
+        <Outlet />
+      </div>
+    ),
+    child: [
+      {
+        path: "",
+        component: <Pages.DuAn />,
+      },
+      {
+        path: ":id",
+        component: <Pages.DuAnDetails />,
+      },
+    ],
   },
   {
     id: 6,

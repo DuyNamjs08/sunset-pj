@@ -8,6 +8,8 @@ import { ProjectStyle } from "../du-an";
 import ListPj2 from "../../components/danh-sach-pj/ListPj2";
 import PartnerSlider from "../../components/slide/Slide2";
 import Advance from "../../components/loi-khuyen/Advance";
+import { CommonLoadingModal } from "../../components/model/LoadingModel";
+import { useFinish } from "../../useQuery/useProject";
 // import Motion from "../../components/motion";
 
 const GioiThieu = () => {
@@ -21,6 +23,7 @@ const GioiThieu = () => {
       path: "",
     },
   ];
+  const { data, isLoading } = useFinish();
   return (
     <GioiThieuStyle>
       <BreadCum data={breadcrumbItems} />
@@ -47,10 +50,11 @@ const GioiThieu = () => {
             mô công nghiệp (&gt;1Mwp) .
           </p>
         </div>
-        <ListPj2 />
+        <ListPj2 data={data?.slice(0, 4)} />
       </ProjectStyle>
       <Advance />
       <PartnerSlider />
+      <CommonLoadingModal isLoadingModalOpen={isLoading} />
     </GioiThieuStyle>
   );
 };

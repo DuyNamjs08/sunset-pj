@@ -6,30 +6,27 @@ const fetchData = async () => {
   const headers = getHeaders();
 
   try {
-    const result = await axios.get(
-      `${import.meta.env.VITE_BASE_URL}/questions`,
-      {
-        headers,
-      }
-    );
+    const result = await axios.get(`${import.meta.env.VITE_BASE_URL}/finish`, {
+      headers,
+    });
     return result.data;
   } catch (error) {
     await handleError(error);
     await fetchData();
   }
 };
-export const useQuestions = () => {
+export const useFinish = () => {
   const { data, isLoading, error, status, refetch } = useQuery({
-    queryKey: ["Questions"],
+    queryKey: ["finish"],
     queryFn: fetchData,
   });
   return { data, isLoading, error, status, refetch };
 };
-const fetchDataQuestion = async (data) => {
+const fetchDataPost = async (data) => {
   const headers = getHeaders();
   try {
-    const result = await axios.Question(
-      `${import.meta.env.VITE_BASE_URL}/questions`,
+    const result = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/finish`,
       data,
       {
         headers,
@@ -41,9 +38,9 @@ const fetchDataQuestion = async (data) => {
   }
 };
 
-export const useQuestionsQuestion = () => {
+export const useFinishPost = () => {
   const { mutate, status } = useMutation({
-    mutationFn: fetchDataQuestion,
+    mutationFn: fetchDataPost,
     onSuccess: () => {},
   });
   return { mutate, status };
@@ -52,7 +49,7 @@ const fetchDataDelete = async (data) => {
   const headers = getHeaders();
   try {
     const result = await axios.delete(
-      `${import.meta.env.VITE_BASE_URL}/questionId`,
+      `${import.meta.env.VITE_BASE_URL}/finishId`,
       {
         headers,
         params: data,
@@ -64,7 +61,7 @@ const fetchDataDelete = async (data) => {
     await fetchData();
   }
 };
-export const useQuestionsDelete = () => {
+export const useFinishDelete = () => {
   const { mutate, status } = useMutation({
     mutationFn: fetchDataDelete,
     onSuccess: () => {},
@@ -76,7 +73,7 @@ const fetchDataId = async (id) => {
 
   try {
     const result = await axios.get(
-      `${import.meta.env.VITE_BASE_URL}/questionId`,
+      `${import.meta.env.VITE_BASE_URL}/finishId`,
       {
         headers,
         params: { _id: id },
@@ -88,9 +85,9 @@ const fetchDataId = async (id) => {
     await fetchData();
   }
 };
-export const useQuestionsId = (query) => {
+export const useFinishId = (query) => {
   const { data, isLoading, error, status, refetch } = useQuery({
-    queryKey: ["Questionsid"],
+    queryKey: [query],
     queryFn: () => fetchDataId(query),
   });
   return { data, isLoading, error, status, refetch };
@@ -99,7 +96,7 @@ const fetchDataUpdate = async (data) => {
   const headers = getHeaders("json");
   try {
     const result = await axios.put(
-      `${import.meta.env.VITE_BASE_URL}/questionId`,
+      `${import.meta.env.VITE_BASE_URL}/finishId`,
       data,
       {
         headers,
@@ -110,7 +107,7 @@ const fetchDataUpdate = async (data) => {
     await handleError(error);
   }
 };
-export const useQuestionsUpdate = () => {
+export const useFinishUpdate = () => {
   const { mutate, status } = useMutation({
     mutationFn: fetchDataUpdate,
     onSuccess: () => {},
