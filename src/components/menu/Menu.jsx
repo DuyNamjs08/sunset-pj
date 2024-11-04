@@ -11,9 +11,9 @@ const MucLuc = () => {
 
   const items = [
     {
-      href: "#SUNEMIT",
+      href: "#",
       title:
-        "SUNEMIT – Đơn vị lắp đặt hệ thống điện mặt trời uy tín chất lượng",
+        "Hải Đăng solar – Đơn vị lắp đặt hệ thống điện mặt trời uy tín chất lượng",
     },
     {
       href: "#Bao_gia_dich_vu",

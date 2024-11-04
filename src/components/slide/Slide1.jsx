@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
+import img from "../../assets/khach-hang.jpg";
 
 const Slide1 = () => {
   const reviews = [
@@ -28,26 +29,9 @@ const Slide1 = () => {
     // autoplay: true,
   };
   return (
-    <Slide1Style>
-      <section
-        className="site-customer"
-        style={{
-          backgroundImage:
-            "url(https://sunemit.com/wp-content/uploads/2020/10/sunemit-khach-hang.jpg)",
-          position: "relative",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(255, 255, 255, 0)",
-            zIndex: 1,
-          }}
-        />
+    <Slide1Style img={img}>
+      <section className="site-customer">
+        <div />
         <div className="title" style={{ position: "relative", zIndex: 2 }}>
           {" "}
           {/* Đảm bảo nội dung nằm trên lớp phủ */}
@@ -86,6 +70,8 @@ const Slide1Style = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-image: url(${(props) => props.img});
+    /* position: relative; */
   }
   .site-customer .title {
     text-align: center;

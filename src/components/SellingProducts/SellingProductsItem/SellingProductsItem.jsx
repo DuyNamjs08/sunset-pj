@@ -16,7 +16,7 @@ const SellingProductsItem = ({ data }) => {
                 ? data?.image?.split(",")?.[0]
                 : logoImg
             }
-            alt="Tấm pin năng lượng mặt trời SUNEMIT SU-01 370W"
+            alt="Tấm pin năng lượng mặt trời"
           />
         </Link>
       </div>

@@ -10,22 +10,12 @@ import PartnerSlider from "../../components/slide/Slide2";
 import SessionHilight from "../../components/hightLight/SessionHilight";
 import Advance from "../../components/loi-khuyen/Advance";
 import { useNavigate } from "react-router-dom";
-import { useInformation } from "../../useQuery/useInformation";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { saveDataProfile } from "../../feature/homeSlice";
 import { CommonLoadingModal } from "../../components/model/LoadingModel";
 import { useBanner } from "../../useQuery/useBanner";
 
 const Home = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { data, isLoading: isloadingProfile } = useInformation();
-  useEffect(() => {
-    if (data) {
-      dispatch(saveDataProfile(data?.[0]));
-    }
-  }, [data]);
+
   const { isLoading, data: dataBanner } = useBanner();
   return (
     <div>
@@ -53,7 +43,7 @@ const Home = () => {
       <PartnerSlider />
       <SessionHilight />
       <Advance />
-      <CommonLoadingModal isLoadingModalOpen={isloadingProfile || isLoading} />
+      <CommonLoadingModal isLoadingModalOpen={isLoading} />
     </div>
   );
 };

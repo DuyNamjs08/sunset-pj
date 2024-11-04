@@ -117,10 +117,7 @@ const MainHeader = ({ onclick }) => {
               <FaBars />
             </div>
             <div className="logo">
-              <Link
-                href="/"
-                title="Điện năng lượng mặt trời, điện mặt trời, sunemit"
-              >
+              <Link href="/">
                 <img
                   className=" w-[100px] mb-4 md:mb-0 md:w-[230px]"
                   src={data?.image}

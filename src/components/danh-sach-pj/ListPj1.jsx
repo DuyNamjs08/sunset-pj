@@ -1,32 +1,10 @@
 import styled from "styled-components";
 import Card1 from "../card/Card1";
 import { usePosts } from "../../useQuery/usePosts";
+import logoImg from "../../assets/hải đăng.png";
 
 const ListPj1 = () => {
-  // const articles = [
-  //   {
-  //     href: "https://sunemit.com/cach-lua-chon-he-thong-dien-mat-troi-phu-hop/",
-  //     imgSrc:
-  //       "https://sunemit.com/wp-content/uploads/2021/06/he-thong-dien-mat-troi-dan-dung-600x337.jpg",
-  //     imgAlt: "Cách lựa chọn Hệ thống Điện mặt trời phù hợp",
-  //     title: "Cách lựa chọn Hệ thống Điện mặt trời phù hợp",
-  //     description:
-  //       "Công trình sử dụng hàng tháng tốn rất nhiều tiền điện thì nên lắp hệ thống điện mặt trời nào hợp lý? Sử dụng điện mặt trời có an toàn...",
-  //     btnText: "Xem thêm",
-  //   },
-  //   {
-  //     href: "https://sunemit.com/giai-phap-dien-mat-troi-cho-cac-co-so-phai-kiem-ke-khi-nha-kinh/",
-  //     imgSrc:
-  //       "https://sunemit.com/wp-content/uploads/2024/09/giai-phap-dien-mat-troi-cho-cac-co-so-phai-kiem-ke-khi-nha-kinh14-600x338.jpg",
-  //     imgAlt: "Giải pháp điện mặt trời cho các cơ sở phải kiểm kê khí nhà kính",
-  //     title: "Giải pháp điện mặt trời cho các cơ sở phải kiểm kê khí nhà kính",
-  //     description:
-  //       "Nhằm hướng tới mục tiêu Net Zero vào năm 2050, Chính phủ đã ban hành một loạt cơ chế quan trọng...",
-  //     btnText: "Xem thêm",
-  //   },
-  // ];
   const { data } = usePosts();
-  console.log(data);
   return (
     <ListPj1Style>
       <section className="site-project">
@@ -42,7 +20,7 @@ const ListPj1 = () => {
           </div>
           <div className="list-project">
             <div className="row">
-              {data?.map((article, index) => (
+              {data?.slice(0, 4)?.map((article, index) => (
                 <div key={index} className="col-md-6 wow fadeInLeft">
                   <Card1
                     title={article.name}
@@ -51,6 +29,8 @@ const ListPj1 = () => {
                       typeof article.image.split(",") === "string"
                         ? article.image
                         : article.image?.split(",")?.[0]
+                        ? article.image?.split(",")?.[0]
+                        : logoImg
                     }
                   />
                 </div>
