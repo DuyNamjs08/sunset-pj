@@ -78,7 +78,10 @@ const Layout = ({ children }) => {
          }`}
       >
         <div className=" cursor-pointer w-[50px] h-[50px] rounded-full bg-[#0172bc] flex items-center justify-center text-[30px] text-white">
-          <Link to={"https://www.facebook.com/tungbkhust"} target="_blank">
+          <Link
+            to={"https://www.facebook.com/TNHHHaidangsolar/"}
+            target="_blank"
+          >
             <FaFacebookMessenger />
           </Link>
         </div>

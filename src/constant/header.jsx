@@ -1,22 +1,22 @@
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 export const socialLinks = [
   {
-    href: "/",
+    href: "/https://www.facebook.com/TNHHHaidangsolar/",
     title: "mxh",
     icon: <FaFacebook />,
   },
   {
-    href: "/",
+    href: "/https://www.facebook.com/TNHHHaidangsolar/",
     title: "mxh",
     icon: <FaInstagram />,
   },
   {
-    href: "/",
+    href: "/https://www.facebook.com/TNHHHaidangsolar/",
     title: "mxh",
     icon: <FaTwitter />,
   },
   {
-    href: "/",
+    href: "/https://www.facebook.com/TNHHHaidangsolar/",
     title: "mxh",
     icon: <FaYoutube />,
   },
