@@ -83,6 +83,23 @@ export const useProduct = (query) => {
       : 0,
   };
 };
+export const useProduct1 = (query) => {
+  const { data, isLoading, error, status, refetch } = useQuery({
+    queryKey: ["product1", query],
+    queryFn: () => fetchData(query),
+    enabled: !!query?.category_id,
+  });
+  return {
+    data,
+    isLoading,
+    error,
+    status,
+    refetch,
+    totalPage: data?.totalCount
+      ? Math.ceil(data.totalCount / defaultLimit.limit ?? 0)
+      : 0,
+  };
+};
 const fetchDataPost = async (data) => {
   const headers = getHeaders();
   try {

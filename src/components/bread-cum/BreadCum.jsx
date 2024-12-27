@@ -32,6 +32,11 @@ const BreadcrumbStyle = styled.div`
   .ant-breadcrumb li:last-child {
     color: #009933;
   }
+  @media (max-width: 768px) {
+    .ant-breadcrumb {
+      padding: 10px 20px;
+    }
+  }
 `;
 
 export default BreadCum;

@@ -22,8 +22,23 @@ const breadcrumbItems = [
 ];
 const Products = () => {
   const location = useLocation();
+  const takeParams = new URLSearchParams(location.search);
   const dispatch = useDispatch();
-  const { offset, page, handleChange, limit } = usePaginate();
+  const { offset, page, handleChange, limit, setOffset, setPage } =
+    usePaginate();
+  const renderId = () => {
+    if (!takeParams.get("category_id")) {
+      return "";
+    } else {
+      return takeParams.get("category_id");
+    }
+  };
+  useEffect(() => {
+    if (!takeParams.get("offset")) {
+      setOffset(0);
+      setPage(1);
+    }
+  }, [takeParams.get("offset")]);
   const {
     data: dataProduct,
     isLoading: isLoadingProduct,
@@ -32,13 +47,16 @@ const Products = () => {
     offset,
     limit,
     productName: "",
-    category_id: location.search.split("=")[1],
+    category_id: renderId(),
   });
   useEffect(() => {
     if (dataProduct?.data) {
       dispatch(handleProductView(dataProduct?.data));
     }
   }, [dataProduct?.data]);
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [page]);
   return (
     <div>
       <LayoutProduct breadcrumbData={breadcrumbItems}>

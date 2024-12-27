@@ -109,7 +109,10 @@ const ListPj1Style = styled.div`
     padding-left: 15px;
   }
   .fadeInLeft:hover h5 {
-    color: #093 !important;
+    color: #111d3d !important;
+  }
+  .lik {
+    color: #c62300;
   }
   @media (max-width: 768px) {
     .row {
@@ -118,6 +121,17 @@ const ListPj1Style = styled.div`
     .col-md-6 {
       flex: 0 0 100%;
       max-width: 100%;
+    }
+    .image-card img {
+      height: 140px;
+      object-fit: cover;
+      width: 100%;
+    }
+    h5 {
+      font-size: 14px;
+    }
+    .lik {
+      font-size: 14px !important;
     }
   }
 `;

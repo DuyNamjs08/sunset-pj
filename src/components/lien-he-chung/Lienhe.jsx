@@ -225,5 +225,13 @@ const ContactStyle = styled.div`
     font-weight: 600;
     color: #2b3152;
   }
+  @media (max-width: 768px) {
+    .title__heading {
+      font-size: 20px;
+    }
+    .page-contact__content span {
+      font-size: 14px;
+    }
+  }
 `;
 export default Lienhe;

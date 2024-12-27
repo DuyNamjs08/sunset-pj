@@ -16,7 +16,6 @@ export const usePaginate = () => {
     setOffset((value - 1) * limit);
     setSearchParams({ limit: limit, offset: (value - 1) * limit, page: value });
   };
-
   return {
     page,
     setPage,

@@ -8,9 +8,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "./style.css";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import styled from "styled-components";
+import DropBlock from "../drop/DropBlock";
 
 const BannerDiDong = ({ data = [] }) => {
   //   const [banners, setBanners] = useState([]);
+  const [updateCount, setUpdateCount] = useState(0);
 
   const settings = {
     dots: false,
@@ -20,6 +22,8 @@ const BannerDiDong = ({ data = [] }) => {
     slidesToScroll: 1,
     lazyLoad: true,
     pauseOnHover: false,
+    autoplaySpeed: 4000,
+    afterChange: () => setUpdateCount((prev) => prev + 1),
     prevArrow: (
       <div className="owl-nav">
         <button type="button" className="owl-prev" aria-label="prev">
@@ -43,17 +47,29 @@ const BannerDiDong = ({ data = [] }) => {
       },
     ],
   };
-
   return (
     <div className="banner-di-dong">
       <Slider {...settings} className="">
-        {data?.map((item, index) => (
+        {/* {data?.map((item, index) => (
           <div key={index} className="item relative">
             <a href="#">
               <img src={item} alt="img" />
             </a>
           </div>
-        ))}
+        ))} */}
+        {data?.map((item, index) => {
+          return (
+            <div key={index} className="item relative">
+              <a href="#">
+                <DropBlock
+                  updateCount={updateCount}
+                  img1={item}
+                  img2={data[(index + 2) % data.length]}
+                />
+              </a>
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );

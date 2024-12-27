@@ -61,7 +61,7 @@ const MainHeader = ({ onclick }) => {
               // };
               return {
                 text: item.name,
-                url: `/san-pham?category_id=${item._id}`,
+                url: `/san-pham?limit=5&offset=0&category_id=${item._id}`,
               };
             })
           : [],

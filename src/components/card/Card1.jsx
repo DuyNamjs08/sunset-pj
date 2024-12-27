@@ -15,7 +15,7 @@ const Card1 = ({
   id = "",
 }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow ">
+    <div className="bg-white border border-gray-200 rounded-lg shadow image-card ">
       <Link to={"/du-an/" + id}>
         <img className="rounded-t-lg" src={img} alt="img" />
       </Link>
@@ -31,14 +31,14 @@ const Card1 = ({
         {isBtn ? (
           <Link
             to={"/du-an/" + id}
-            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="lik inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             {btnLabel}
           </Link>
         ) : (
           <Link
             to={"/du-an/" + id}
-            className=" flex items-center gap-1 underline text-[#093] uppercase text-[14px]"
+            className="lik flex items-center gap-1 underline  uppercase text-[14px]"
           >
             {btnLabel} <FaChevronRight />
           </Link>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BreadCum from "../../components/bread-cum/BreadCum";
-import GioiThieu2 from "../../components/gioi-thieu/GioiThieu2";
+// import GioiThieu2 from "../../components/gioi-thieu/GioiThieu2";
 import Achivement from "../../components/thanh-tuu";
 import GioiThieu3 from "../../components/gioi-thieu/GioiThieu3";
 import GioiThieu4 from "../../components/gioi-thieu/GioiThieu4";
@@ -10,6 +10,11 @@ import PartnerSlider from "../../components/slide/Slide2";
 import Advance from "../../components/loi-khuyen/Advance";
 import { CommonLoadingModal } from "../../components/model/LoadingModel";
 import { useFinish } from "../../useQuery/useProject";
+import Session1 from "../design-gt/Session1";
+import Session2 from "../design-gt/Session2";
+import Session3 from "../design-gt/Session3";
+import Session4 from "../design-gt/Session4";
+import Session5 from "../design-gt/Session5";
 // import Motion from "../../components/motion";
 
 const GioiThieu = () => {
@@ -27,16 +32,14 @@ const GioiThieu = () => {
   return (
     <GioiThieuStyle>
       <BreadCum data={breadcrumbItems} />
-      <GioiThieu2 />
+      <Session1 />
+      <Session2 />
+      <Session3 />
+      <Session4 />
+      <Session5 />
+      {/* <GioiThieu2 /> */}
       <Achivement />
       <GioiThieu3 />
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {listIten.map((item) => (
-          <div key={item.id}>
-            <Motion />
-          </div>
-        ))}
-      </div> */}
       <GioiThieu4 />
       <ProjectStyle>
         <div className="title container">
