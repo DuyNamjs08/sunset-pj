@@ -1,7 +1,7 @@
 // import React from "react";
 
 import styled from "styled-components";
-import bgSession1 from "./assets/stock-photo-wind-generator-turbines-on-sunset.jpeg";
+import bgSession1 from "./assets/hai dang final-13.jpg";
 import { useSelector } from "react-redux";
 
 const Session1 = () => {

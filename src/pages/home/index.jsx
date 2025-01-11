@@ -12,7 +12,7 @@ import Advance from "../../components/loi-khuyen/Advance";
 // import { useNavigate } from "react-router-dom";
 import { CommonLoadingModal } from "../../components/model/LoadingModel";
 import { useBanner } from "../../useQuery/useBanner";
-import Session1 from "../design-gt/Session1";
+// import Session1 from "../design-gt/Session1";
 import Session2 from "../design-gt/Session2";
 import Session3 from "../design-gt/Session3";
 import Session4 from "../design-gt/Session4";
@@ -21,11 +21,15 @@ import { useCategory } from "../../useQuery/useCategory";
 import { useProduct1 } from "../../useQuery/useProducts";
 import Slider from "react-slick";
 import ProductItem from "../../components/productItem/ProductItem";
+import styled from "styled-components";
+import { useSelector } from "react-redux";
 // import DropBlock from "../../components/drop/DropBlock";
 
 const Home = () => {
   // const navigate = useNavigate();
-
+  const data = useSelector((state) => state.home.dataProfile);
+  const srcMatch = data?.youtube?.match(/src="([^"]+)"/);
+  console.log(data?.youtube, srcMatch);
   const { isLoading, data: dataBanner } = useBanner();
   const { data: dataCategory } = useCategory();
   const { data: dataListproduct } = useProduct1({
@@ -40,8 +44,6 @@ const Home = () => {
     productName: "",
     category_id: dataCategory?.data?.[3],
   });
-  console.log(dataCategory);
-  console.log("dataListproduct", dataListproduct);
   const settings = {
     dots: true,
     infinite: true,
@@ -72,7 +74,7 @@ const Home = () => {
     ],
   };
   return (
-    <div>
+    <Box>
       {/* <DropBlock /> */}
       <Banner data={dataBanner?.[0]?.image?.split(",")} />
       {/* <StyleBanner>
@@ -92,7 +94,18 @@ const Home = () => {
       </StyleBanner> */}
       {/* <ListItem1 /> */}
       {/* <IntroSession1 /> */}
-      <Session1 />
+      {/* <Session1 /> */}
+      {srcMatch ? (
+        <div className="p-2 md:p-0 flex items-center justify-center mt-4">
+          <iframe
+            className="iframe"
+            src={srcMatch[1]}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ) : null}
       <div className="md:py-[20px] container">
         <h3 className="mb-[10px] md:mb-[30px] text-[36px] font-bold text-[#2b3152] release-pd">
           {dataCategory?.data?.[0]?.name}
@@ -132,9 +145,21 @@ const Home = () => {
       <SessionHilight />
       <Advance />
       <CommonLoadingModal isLoadingModalOpen={isLoading} />
-    </div>
+    </Box>
   );
 };
+const Box = styled.div`
+  .iframe {
+    width: 1170px;
+    height: 500px;
+  }
+  @media (max-width: 768px) {
+    .iframe {
+      width: 100%;
+      height: 260px;
+    }
+  }
+`;
 // const StyleBanner = styled.div`
 //   background: linear-gradient(45deg, #80cc99, #009933);
 //   min-height: 180px;

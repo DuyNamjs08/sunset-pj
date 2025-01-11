@@ -22,6 +22,7 @@ import imgNotFound from "../../assets/notFound.gif";
 import useScrollToTopOnMount from "../../hooks/useScrollToTopOnMount";
 import { IconButton, Tooltip } from "@mui/material";
 import { useMails } from "../../useQuery/useMails";
+import styled from "styled-components";
 const paymentData = [
   { label: "Thanh toán tiền mặt", value: "payment_on_delivery" },
   { label: "Chuyển khoản ngân hàng", value: "bank_transfer" },
@@ -56,66 +57,81 @@ const Payment = () => {
       setIsLoadingMethod(false);
     }
   }, [status]);
-
   return (
-    <>
+    <Box>
       <div className="p-[20px] max-w-screen-xl mx-auto">
-        <div className="text-[28px] font-semibold mb-4">Thanh toán</div>
+        <div className="text-[20px] md:text-[28px] font-semibold mb-4">
+          Thanh toán
+        </div>
         {cartItems?.length > 0 ? (
           <div className="block md:flex gap-5">
-            <div className="md:w-1/2 flex flex-col gap-4">
+            <div className="main-order md:w-1/2 flex flex-col gap-4">
               {cartItems
                 ? cartItems?.map((item) => (
-                    <div key={item._id} className="flex gap-4 shadow-md">
-                      <div className="w-1/3">
+                    <div
+                      key={item._id}
+                      className="mb-2 md:mb-0 p-2 md:p-1 block md:flex gap-1 md:gap-4 shadow-md"
+                    >
+                      <div className="w-full md:w-1/3 hover:opacity-55">
                         <img
                           className="h-[120px] w-[100%] object-contain"
                           src={item.image.split(",")[0]}
                           alt=""
                         />
                       </div>
-                      <div className="w-1/3 flex  flex-col gap-2">
-                        <div className="text-[18px] font-semibold">
-                          {item.productName}
-                        </div>
-                        <div className="text-[14px] text-gray-500">
-                          {item.description}
-                        </div>
-                        <div className="text-[14px] text-gray-500">
-                          {addDot(item.price)} <span>vnđ</span>
-                        </div>
-                        <div>
-                          {item.status ? (
-                            <span className="text-green-700 font-medium">
-                              Còn Hàng
-                            </span>
-                          ) : (
-                            <span className="text-red-700 font-medium">
-                              Hết hàng
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="w-1/3  items-center justify-center">
-                        <div className="flex items-center">
-                          <span className="font-medium mr-2">số lượng:</span>{" "}
-                          <span className="font-semibold text-[18px] text-green-700">
-                            {item.quantity}
-                          </span>
-                        </div>
-                        <div className="flex items-center">
+                      <div>
+                        <div className="flex flex-col gap-2">
+                          <div className="mt-1 md:mt-0 text-[14px] md:text-[18px] font-semibold">
+                            {item.productName}
+                          </div>
                           <div
-                            onClick={() =>
-                              dispatch(handleDeleteFromCart({ _id: item._id }))
-                            }
-                          >
-                            <Tooltip title="Xóa">
-                              <IconButton>
-                                <div className="flex items-center text-[16px] text-red-800 hover:text-red-700">
-                                  Xóa
-                                </div>
-                              </IconButton>
-                            </Tooltip>
+                            className="text-[14px] text-gray-500"
+                            dangerouslySetInnerHTML={{
+                              __html: `${item?.description.slice(0, 100)}...`,
+                            }}
+                          ></div>
+                          <div className="text-[14px] text-gray-500">
+                            {addDot(item?.price)} <span>vnđ</span>
+                          </div>
+                          <div>
+                            Trạng thái:
+                            {item.status ? (
+                              <span className="text-green-700 font-medium">
+                                {" Còn Hàng"}
+                              </span>
+                            ) : (
+                              <span className="text-red-700 font-medium">
+                                {"  Hết hàng"}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                        <div className="items-center justify-center">
+                          <div className="flex items-center">
+                            <span className="mr-2">số lượng:</span>{" "}
+                            <span className="font-semibold text-[18px] text-green-700">
+                              {item.quantity}
+                            </span>
+                          </div>
+                          <div className="flex items-center">
+                            <div
+                              onClick={() =>
+                                dispatch(
+                                  handleDeleteFromCart({ _id: item._id })
+                                )
+                              }
+                            >
+                              <Tooltip title="Xóa">
+                                <IconButton>
+                                  <div
+                                    className="flex items-center text-[16px]
+                                   bg-red-600 hover:bg-red-900 p-2 rounded-sm text-white"
+                                  >
+                                    Xóa
+                                  </div>
+                                </IconButton>
+                              </Tooltip>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -181,7 +197,10 @@ const Payment = () => {
               <div className="flex items-center mb-6">
                 <div>Tổng tiền : </div>
                 <div className="ml-2 font-semibold text-[18px]">
-                  {addDot(calcTotalPriceOrder(cartItems))} <span>vnđ</span>
+                  {cartItems?.[0]?.price === "Liên hệ"
+                    ? "Liên hệ"
+                    : addDot(calcTotalPriceOrder(cartItems))}
+                  {cartItems?.[0]?.price !== "Liên hệ" && <span>vnđ</span>}
                 </div>
               </div>
               {/* quy tac */}
@@ -292,8 +311,8 @@ const Payment = () => {
         )}
       </div>
       <CommonLoadingModal isLoadingModalOpen={isLoadingMethod} />
-    </>
+    </Box>
   );
 };
-
+const Box = styled.div``;
 export default Payment;

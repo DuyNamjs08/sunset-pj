@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useLocation, useParams } from "react-router-dom/dist";
+import { useNavigate, useLocation, useParams } from "react-router-dom/dist";
 import BreadCum from "../../components/bread-cum/BreadCum";
 import { useState } from "react";
 
@@ -45,6 +45,7 @@ const breadcrumbItems = [
   },
 ];
 const DetailProduct = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
   const cartItems = useSelector((state) => state.home.cartItems);
@@ -230,13 +231,19 @@ const DetailProduct = () => {
                   </div>
                 </div>
                 <div className="addtocart_button">
-                  <button className="btn btn-effect-default btn-red button_cart product_add_to_cart">
+                  <button
+                    onClick={() => navigate("/don-hang")}
+                    className="btn btn-effect-default btn-red button_cart product_add_to_cart"
+                  >
                     <span className="button_cart__heading">Thêm vào giỏ</span>
                     <span className="button_cart__desc">
                       và mua sản phẩm khác
                     </span>
                   </button>
-                  <button className="btn btn-effect-default btn-green button_cart_now product_add_to_cart_now">
+                  <button
+                    onClick={() => navigate("/don-hang")}
+                    className="btn btn-effect-default btn-green button_cart_now product_add_to_cart_now"
+                  >
                     <span className="button_cart__heading">Mua Ngay</span>
                     <span className="button_cart__desc">Thanh toán ngay</span>
                   </button>

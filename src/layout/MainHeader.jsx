@@ -7,7 +7,6 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { FaCartShopping } from "react-icons/fa6";
 // import logo from "../assets/hải đăng.png";
 import { useEffect, useState } from "react";
 // import logo from "../assets/hải đăng.png";
@@ -127,7 +126,7 @@ const MainHeader = ({ onclick }) => {
               </Link>
             </div>
             <div className="block md:hidden text-[20px] cursor-pointer">
-              <FaCartShopping />
+              <BadgeCmp />
             </div>
           </div>
           <div className="hidden md:block w-[80%] ">

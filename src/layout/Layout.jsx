@@ -12,6 +12,8 @@ import zalo from "../assets/zalo.svg";
 import { useInformation } from "../useQuery/useInformation";
 import { FaAnglesUp } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Marquee from "./Marquee";
 
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
@@ -58,7 +60,7 @@ const Layout = ({ children }) => {
     });
   };
   return (
-    <div>
+    <MainContainer>
       <Header />
       <MainHeader onclick={() => setOpen(true)} />
       {children}
@@ -72,7 +74,7 @@ const Layout = ({ children }) => {
       )}
       <DrawerComponent open={open} onClose={() => setOpen(false)} />
       <div
-        className={`fixed z-50 right-0 bottom-0 transition-all
+        className={`fixed z-50 right-0 bottom-[45px] transition-all
          w-[100px] flex flex-col items-center gap-2 ${
            isVisible ? "h-[240px]" : "h-[200px]"
          }`}
@@ -116,8 +118,12 @@ const Layout = ({ children }) => {
           </div>
         )}
       </div>
-    </div>
+      <Marquee />
+    </MainContainer>
   );
 };
+const MainContainer = styled.div`
+  overflow-x: hidden;
+`;
 
 export default Layout;

@@ -1,7 +1,7 @@
 // import React from "react";
 
 import styled from "styled-components";
-import bgSession1 from "./assets/stock-photo-solar-power-station-photovoltaics.png";
+import bgSession1 from "./assets/hai dang final-16.jpg";
 
 const Session2 = () => {
   return (

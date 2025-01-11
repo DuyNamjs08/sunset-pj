@@ -6,7 +6,9 @@ const BadgeCmp = () => {
   const navigate = useNavigate();
   return (
     <button
-      onClick={() => navigate("/don-hang")}
+      onClick={() => {
+        navigate("/don-hang");
+      }}
       type="button"
       className="relative inline-flex items-center p-3 text-sm font-medium text-center  rounded-full hover:bg-gray-100 justify-center transition ease-in-out"
     >

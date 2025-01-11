@@ -7,7 +7,7 @@ const Header = () => {
         <div className="container">
           <div className="flex justify-between">
             <div className="col-md-6">
-              <div className="times">
+              <div className="times text-[12px] md:text-[16px]">
                 <span>Hãy để Điện Mặt Trời phục vụ bạn 24/7</span>
               </div>
             </div>

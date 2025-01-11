@@ -15,6 +15,10 @@ import Session2 from "../design-gt/Session2";
 import Session3 from "../design-gt/Session3";
 import Session4 from "../design-gt/Session4";
 import Session5 from "../design-gt/Session5";
+import Session6 from "../design-gt/Session6";
+import Session7 from "../design-gt/Session7";
+import Session8 from "../design-gt/Session8";
+import Session9 from "../design-gt/Session9";
 // import Motion from "../../components/motion";
 
 const GioiThieu = () => {
@@ -37,6 +41,10 @@ const GioiThieu = () => {
       <Session3 />
       <Session4 />
       <Session5 />
+      <Session6 />
+      <Session7 />
+      <Session8 />
+      <Session9 />
       {/* <GioiThieu2 /> */}
       <Achivement />
       <GioiThieu3 />
